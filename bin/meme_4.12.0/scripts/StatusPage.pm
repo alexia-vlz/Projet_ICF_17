@@ -29,7 +29,7 @@ use HTML::Template;
 use Sys::Hostname;
 use Time::HiRes;
 
-use lib qw(/home/avelasquez/meme/lib/perl);
+use lib qw(/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/perl);
 use Alphabet qw(dna rna protein);
 use ExecUtils qw(invoke stringify_args);
 use Globals;
@@ -41,7 +41,7 @@ eval {
   Log::Log4perl->import();
 };
 unless ($@) {
-  Log::Log4perl::init('/home/avelasquez/meme/etc/logging.conf');
+  Log::Log4perl::init('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/etc/logging.conf');
   $logger = Log::Log4perl->get_logger('meme.service.utils');
 }
 
@@ -561,7 +561,7 @@ sub update {
   my $fh;
   sysopen($fh, $self->{page}, O_CREAT | O_WRONLY | O_TRUNC) 
       or _log_and_die("Failed to open \"" . $self->{page} . "\".");
-  my $template = HTML::Template->new(filename => '/home/avelasquez/meme/etc/job_status.tmpl');
+  my $template = HTML::Template->new(filename => '/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/etc/job_status.tmpl');
   $template->param(
     program => $self->{program},
     files => \@found_files,
@@ -697,7 +697,7 @@ sub write_log {
   # the end time (now)
   my $end_time = &_format_log_date(&Time::HiRes::gettimeofday());
   # create the path to the log file
-  my $logfile = catfile('/home/avelasquez/meme/LOGS', $self->{log});
+  my $logfile = catfile('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/LOGS', $self->{log});
   # open the log file for appending
   my $logfh;
   sysopen($logfh, $logfile, O_CREAT | O_APPEND | O_WRONLY) 

@@ -21,7 +21,7 @@ use Getopt::Long;
 use Pod::Usage;
 use XML::Parser::Expat;
 
-use lib '/home/avelasquez/meme/lib/perl';
+use lib '/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/perl';
 
 my $etc_dir;
 my $temp_dir;
@@ -32,7 +32,7 @@ my $scripts_dir;
 # 
 sub initialise {
   # setup etc dir
-  $etc_dir = defined($ENV{MEME_ETC_DIR}) ? $ENV{MEME_ETC_DIR} : '/home/avelasquez/meme/etc';
+  $etc_dir = defined($ENV{MEME_ETC_DIR}) ? $ENV{MEME_ETC_DIR} : '/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/etc';
   # setup temporary directory
   $temp_dir = '';
   # use the perl default if none is supplied or the replace fails

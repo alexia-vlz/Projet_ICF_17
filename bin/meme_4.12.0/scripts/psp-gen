@@ -30,7 +30,7 @@ use File::Basename qw(fileparse);
 use Getopt::Long;
 use Pod::Usage;
 
-use lib ('/home/avelasquez/meme/lib/perl');
+use lib ('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/perl');
 
 use Alphabet qw(dna protein rna);
 use PriorUtils qw(normalize_size normalized_classifier_scores printScoreAsPrior

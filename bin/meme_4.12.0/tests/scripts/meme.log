@@ -24,5 +24,5 @@ meme common/adh.s -oc results/meme6 -mod tcm -protein -nmotifs 2 -minw 8 -nostat
 PASSED!
 *******************************************************************************
 Test meme_psp ...
-meme common/psp_test.s -psp common/psp_test.psp -minsites 5 -dna -revcomp -minw 7 -maxw 12 -nostatus -text 1> results/meme7/meme_sO8sj_stdout 2> log
+meme common/psp_test.s -psp common/psp_test.psp -minsites 5 -dna -revcomp -minw 7 -maxw 12 -nostatus -text 1> results/meme7/meme_F1tAG_stdout 2> log
 PASSED!

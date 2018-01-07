@@ -4,7 +4,7 @@ import json, sys, string, copy, time
 from math import log, pow, floor, exp
 
 # MEME Suite libraries
-sys.path.append('/home/avelasquez/meme/lib/python')
+sys.path.append('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/python')
 import alphabet_py3 as alphabet
 import sequence_py3 as sequence
 from hypergeometric import getLogFETPvalue

@@ -2,7 +2,7 @@
 
 import copy, random, string, sys
 # MEME Suite libraries
-sys.path.append('/home/avelasquez/meme/lib/python')
+sys.path.append('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/python')
 import alphabet
 import sequence
 

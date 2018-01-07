@@ -111,7 +111,7 @@ use POSIX qw(floor);
 use Time::HiRes qw(gettimeofday tv_interval);
 use XML::Simple;
 
-use lib qw(/home/avelasquez/meme/lib/perl);
+use lib qw(/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/perl);
 use Globals;
 use Alphabet qw(dna rna protein);
 use ExecUtils qw(invoke stringify_args2);
@@ -148,7 +148,7 @@ sub initialise {
   eval {
     require Log::Log4perl;
     Log::Log4perl->import();
-    Log::Log4perl::init('/home/avelasquez/meme/etc/logging.conf');
+    Log::Log4perl::init('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/etc/logging.conf');
     $logger = Log::Log4perl->get_logger('meme.service.memechip');
     $SIG{__DIE__} = sub {
       return if ($^S);
@@ -162,13 +162,13 @@ sub initialise {
   $| = 1;
 
   # setup binary directory
-  $bin_dir = $ENV{'MEME_BIN_DIR'} ? $ENV{'MEME_BIN_DIR'} : '/home/avelasquez/meme/bin';
+  $bin_dir = $ENV{'MEME_BIN_DIR'} ? $ENV{'MEME_BIN_DIR'} : '/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin';
 
   # setup script directory
-  $script_dir = $ENV{'MEME_SCRIPT_DIR'} ? $ENV{'MEME_SCRIPT_DIR'} : '/home/avelasquez/meme/bin';
+  $script_dir = $ENV{'MEME_SCRIPT_DIR'} ? $ENV{'MEME_SCRIPT_DIR'} : '/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin';
 
   # setup etc directory
-  $etc_dir = $ENV{'MEME_ETC_DIR'} ? $ENV{'MEME_ETC_DIR'} : '/home/avelasquez/meme/etc';
+  $etc_dir = $ENV{'MEME_ETC_DIR'} ? $ENV{'MEME_ETC_DIR'} : '/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/etc';
 
   # setup temporary directory
   $temp_dir = '';

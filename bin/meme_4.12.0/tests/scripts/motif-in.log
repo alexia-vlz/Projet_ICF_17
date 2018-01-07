@@ -94,7 +94,7 @@ Generalizing top 34 of 34 REs to 3 ambiguous characters...
 Computing exact p-values for 100 REs...
 Best RE was MCRCCCA TGGGYGK p-value= 6.9e-024 E-value= 2.9e-019 Unerased_E-value= 2.5e-040
 Stopping due to hitting the maximum count.
-3 motifs with E-value < 0.05 found in 131.0 seconds.
+3 motifs with E-value < 0.05 found in 131.4 seconds.
 Creating HTML file.
 Creating text file.
 *******************************************************************************
@@ -145,7 +145,7 @@ Generalizing top 32 of 32 REs to 3 ambiguous characters...
 Computing exact p-values for 100 REs...
 Best RE was MCRCCCA TGGGYGK p-value= 6.9e-024 E-value= 2.9e-019 Unerased_E-value= 2.5e-040
 Stopping due to hitting the maximum count.
-3 motifs with E-value < 0.05 found in 203.1 seconds.
+3 motifs with E-value < 0.05 found in 194.9 seconds.
 Creating HTML file.
 Creating text file.
 *******************************************************************************
@@ -195,7 +195,7 @@ Generalizing top 24 of 24 REs to 3 ambiguous characters...
 Computing exact p-values for 100 REs...
 Best RE was GAARR p-value= 1.1e-014 E-value= 6.2e-010 Unerased_E-value= 6.2e-010
 Stopping due to hitting the maximum count.
-3 motifs with E-value < 0.05 found in 25.8 seconds.
+3 motifs with E-value < 0.05 found in 24.9 seconds.
 Creating HTML file.
 Creating text file.
 *******************************************************************************

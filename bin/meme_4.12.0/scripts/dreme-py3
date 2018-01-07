@@ -12,7 +12,7 @@ from re import findall, compile, finditer
 from math import log, pow, floor, exp
 from xml.sax.saxutils import escape
 # MEME Suite libraries
-sys.path.append('/home/avelasquez/meme/lib/python')
+sys.path.append('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/python')
 import alphabet_py3 as alphabet
 import sequence_py3 as sequence
 from hypergeometric_py3 import log_getFETprob
@@ -45,7 +45,7 @@ def meme_bin(target_program):
         dirs = os.environ.get("MEME_BIN_DIR")
     if dirs != None:
         return search_dirs(dirs, target_program)
-    prog = os.path.join('/home/avelasquez/meme/bin', target_program)
+    prog = os.path.join('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin', target_program)
     if os.path.exists(prog):
         return prog
     return None
@@ -56,7 +56,7 @@ def meme_etc(target_file):
     dirs = os.environ.get("MEME_ETC_DIR")
     if dirs != None:
         return search_dirs(dirs, target_file)
-    afile = os.path.join('/home/avelasquez/meme/etc', target_file)
+    afile = os.path.join('/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/etc', target_file)
     if os.path.exists(afile):
         return afile
     return None

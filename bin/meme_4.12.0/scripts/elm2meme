@@ -8,7 +8,7 @@ use warnings;
 use strict;
 
 
-use lib qw(/home/avelasquez/meme/lib/perl);
+use lib qw(/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/perl);
 
 use Alphabet qw(protein);
 use MotifUtils qw(seq_to_intern intern_to_meme read_background_file);

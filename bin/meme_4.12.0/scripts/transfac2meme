@@ -7,7 +7,7 @@
 use strict;
 use warnings;
 
-use lib qw(/home/avelasquez/meme/lib/perl);
+use lib qw(/home/avelasquez/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/lib/perl);
 
 use Alphabet qw(dna rna);
 use MotifUtils qw(matrix_to_intern intern_to_meme read_background_file);
