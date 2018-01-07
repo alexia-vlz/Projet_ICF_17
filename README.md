@@ -12,12 +12,13 @@ Objectif:
 
 # Installation de MEME
 ``` {}
+tar zxf meme_4.12.0.tar.gz 
 cd meme_4.12.0
-./configure --prefix=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme --with-url=http://meme-suite.org --enable-build-libxml2 --enable-build-libxslt --with-db=​../motif_databases --with-gs=/usr/bin/gs
+./configure --prefix=$HOME/meme --with-url=http://meme-suite.org --enable-build-libxml2 --enable-build-libxslt --with-db=​../motif_databases --with-gs=/usr/bin/gs
 make
 make test
 make install
-export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH
+export PATH=$HOME/meme/bin:$PATH 
 ```
 
 

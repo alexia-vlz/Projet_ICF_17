@@ -58,7 +58,13 @@ def initialization_argument():
 if __name__ == '__main__':
     debut = time.time()
     args = initialization_argument()
-
+    adress_abs = os.getcwd()
+    # Create the repertory that will contains the results
+    repertoire = adress_abs+"/result/"+args.dir_result
+    if not os.path.exists(repertoire):
+        os.system("mkdir "+repertoire)
+    else:
+        sys.exit("This repository"+repertoire+" already exists!\n")
     #Lancement de MEME
     cmd_meme = "meme {} -nmotifs {} -w {} -nsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, args.nb_site, args.dir_result)
     os.system(cmd_meme)

@@ -1,18 +1,28 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+import re
 
-
-def store_motifs_meme():
-    with open("hypo_Zbtb_genes.fasta", "r") as filein:
+def store_motifs_meme(filememe):
+    """
+    Recuperation des motifs trouvé par MEME du fichier meme.txt
+    """
+    fileout = open("motif_meme_found.txt","w")
+    with open(filememe, "r") as filein:
+        l_motif = []
         for ligne in filein:
-            regex = re.compile("(^ATOM +)([0-9]+)( +([CONH]|H1) )")
+            regex = re.compile("Multilevel")
             resultat = regex.search(ligne)
             if resultat:
                 l = ligne.split()
-                liste = l[2] + ' ' + l[3]+ ' ' + l[5] + ' ' + l[6] + ' ' + l[7] + ' ' +l[8] +'\n'
-                l2.append(l[3])
-    return 
+                liste = l[1] + '\n'
+                l_motif.append(l[1])
+                fileout.write(liste)
+    fileout.close()
+    return l_motif
+
+
+
 
 
 if __name__ == '__main__':
-    store_motifs_meme
+    list_motif = store_motifs_meme("/home/avelasquez/Projet_ICF_17/results/results_test/meme.txt")
