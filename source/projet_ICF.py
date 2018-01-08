@@ -31,8 +31,11 @@ filout.close()
 
 import argparse
 import time
+import sys
 import os
 import re
+sys.path.append('./source/')
+import step1
 
 # Initialisation des parametres
 def initialization_argument():
@@ -48,25 +51,33 @@ def initialization_argument():
     parser.add_argument('-o', action="store", type=str, default="result_meme",
                        dest='dir_result', required=True, help="Directory \
                        result name ")
-    parser.add_argument('-ns', action="store", type=int, default=False,
-                       dest='nb_site', required=False, help="Number of \
-                       site by motif - default = 2")
+    #parser.add_argument('-ns', action="store", type=int, default=False,
+    #                   dest='nb_site', required=False, help="Number of \
+    #                   site by motif - default = 2")
     args = parser.parse_args()
     return args
 
 
 if __name__ == '__main__':
+    # ./source/projet_ICF.py -fa data/genes_zbtb.fasta -n 40 -w 8 -o results_testdna
     debut = time.time()
     args = initialization_argument()
-    adress_abs = os.getcwd()
+    adress_abs = os.getcwd() #dans src
     # Create the repertory that will contains the results
-    repertoire = adress_abs+"/result/"+args.dir_result
+    repertoire = adress_abs+"/results/"+args.dir_result
     if not os.path.exists(repertoire):
         os.system("mkdir "+repertoire)
     else:
         sys.exit("This repository"+repertoire+" already exists!\n")
-    #Lancement de MEME
-    cmd_meme = "meme {} -nmotifs {} -w {} -nsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, args.nb_site, args.dir_result)
+
+    # Selection de motifs si il est present dans 10% des sequences
+    fasta = adress_abs+"/"+args.file_fasta
+    nseq = step1.nb_seq_fasta(fasta)
+    #print ("Nombre de seq fasta : {}, \nNombre de sites à trouver est de 10 pourcent donc doit etre present dans minimum {} seq \n".format(nseq, nseq/10))
+    nb_site = nseq/10
+
+    # Lancement de MEME
+    cmd_meme = "meme {} -nmotifs {} -w {} -nsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, nb_site, args.dir_result)
     os.system(cmd_meme)
 
     # Etape 1: selection motif
