@@ -8,13 +8,25 @@ Objectif:
 - GC content
 - find motif
 
+# Input & Output
 
+Input : fichier fasta de séquence
+Output: fichiers connus et inconnus
+
+# Mise en place strucuture
+Creer la structure suivante de dossier:
+/bin /data /source /results  
+
+``` {}
+cd projet_long
+mkdir bin data source results
+``` 
 
 # Installation de MEME
 ``` {}
 tar zxf meme_4.12.0.tar.gz 
 cd meme_4.12.0
-./configure --prefix=$HOME/meme --with-url=http://meme-suite.org --enable-build-libxml2 --enable-build-libxslt --with-db=​../motif_databases --with-gs=/usr/bin/gs
+./configure --prefix=$HOME/meme --with-url=http://meme-suite.org --enable-build-libxml2 --enable-build-libxslt --with-db=​motif_databases --with-gs=/usr/bin/gs
 make
 make test
 make install
@@ -23,7 +35,14 @@ export PATH=$HOME/meme/bin:$PATH
 
 
 # Lancement du programme
+
 ``` {}
+Dans le dossier meme/src:
+$ chmod +x src/
+
+Si error: meme ou tomtom commande non trouvé retaper cette commande
+$ export PATH=$HOME/meme/bin:$PATH  
+
 usage: projet_ICF.py [-h] -fa FILE_FASTA -n NB_MOTIF -w LEN_MOTIF -o
                      DIR_RESULT [-ns NB_SITE]
 
