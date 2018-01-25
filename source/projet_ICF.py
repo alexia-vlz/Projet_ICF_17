@@ -23,7 +23,8 @@ export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH
 #make
 #make test
 #make install
-#export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH 
+## PCmaison:  export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH 
+## PCfac: export PATH=$home/sdv/m2bi/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH 
 
 
 import argparse
@@ -58,13 +59,13 @@ def initialization_argument():
 
 
 if __name__ == '__main__':
-    # ./source/projet_ICF.py -fa data/genes_zbtb.fasta -n 10 -w 8 -db bin/motif_databases/HUMAN/HOCOMOCOv9.meme -o results_testdna
+    # ./source/projet_ICF.py -fa data/genes_zbtb.fasta -n 10 -w 8 -db bin/motif_databases/HUMAN/HOCOMOCOv9.meme -o results_testdna900
 
      #./source/projet_ICF.py -fa data/genes_zbtb.fasta -n 40 -w 8 -db bin/motif_databases/HUMAN/HOCOMOCOv9.meme -o results_testdna3
 
     debut = time.time()
     args = initialization_argument()
-    adress_abs = os.getcwd() #dans src
+    adress_abs = os.getcwd() #dans src? plutot dans /projet_ICF
     # Create the repertory that will contains the results
     repertoire_meme = adress_abs+"/results/"+args.dir_result_meme
     #print repertoire_meme
@@ -83,24 +84,25 @@ if __name__ == '__main__':
     # MEME
     cmd_path = "export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH"
     #print cmd_path
-    os.system(cmd_path)
+    #os.system(cmd_path)
 
     print ("Lancement de MEME\n")
-    cmd_meme = "meme {} -nmotifs {} -w {} -nsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, nb_site, repertoire_meme)
+    cmd_meme = "meme {} -nmotifs {} -w {} -minsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, nb_site, repertoire_meme)
     #print cmd_meme
     #os.system(cmd_meme)
 
+    # Motif meme et identifiant de sequence
+    print ("Recuperation des motifs de MEME\n")
+    dico_id_motif_meme = step1.id_motifs_meme(repertoire_meme, repertoire_meme)
+    """
     # TOMTOM
     print ("Lancement de TOMTOM\n")
     print ("Dossier meme: {}".format(repertoire_meme))
     print ("Dossier db: {}".format(args.database))
     path_tomtom = "results/output_tomtom"
     #step1.start_tomtom(repertoire_meme, args.database, path_tomtom)
-
-    # Motif meme et identifiant de sequence
-    print ("Recuperation des motifs de MEME\n")
-    dico_id_motif_meme = step1.id_motifs_meme(repertoire_meme, repertoire_meme)
-
+    """
+    """
     # Motifs tomtom
     print ("Recuperation des motifs de TOMTOM\n")
     step1.parse_output_tomtom(path_tomtom)
@@ -108,6 +110,7 @@ if __name__ == '__main__':
     # Selection motif connu/pas connu
     print ("Differenciation des motifs connus/pas connus\n")
     step1.comparaison_meme_tomtom(dico_id_motif_meme, path_tomtom)
+    """
 
     fin = time.time()
     print "Temps execution du programme:\n"
