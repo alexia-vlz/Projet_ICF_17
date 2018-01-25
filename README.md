@@ -4,13 +4,16 @@ Maladie ICF :
 - rare 100 personnes au monde
 - default / excess de méthylation épigenetique  
 
-Objectif: 
-- GC content
-- find motif
+Objectif:
+- trouver motifs de taille 5,6,8
+- occurrence de 10%
+- motifs connus ou non
+- presence de CpG
+
 
 # Input & Output
 
-Input : fichier fasta de séquence
+Input : fichier fasta de séquence  
 Output: fichiers connus et inconnus
 
 # Mise en place strucuture

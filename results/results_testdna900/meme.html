@@ -12,7 +12,7 @@
         "stop_reason": "Stopped because requested number of motifs (10) found.",
         "cmd": [
           "meme", "data/genes_zbtb.fasta", "-nmotifs", "10", "-w", "8",
-          "-nsites", "2", "-oc",
+          "-minsites", "2", "-oc",
           "/home/avelasquez/Projet_ICF_17/results/results_testdna900", "-dna"
         ],
         "options": {
@@ -22,7 +22,7 @@
           "minw": 8,
           "maxw": 8,
           "minsites": 2,
-          "maxsites": 2,
+          "maxsites": 27,
           "wnsites": 0.8,
           "spmap": "uni",
           "spfuzz": 0.5,
@@ -231,119 +231,256 @@
         "motifs": [
           {
             "db": 0,
-            "id": "AGGAGGGC",
+            "id": "KCYAAGAG",
             "alt": "MEME-1",
             "len": 8,
-            "nsites": 2,
-            "evalue": "1.4e+003",
-            "ic": 16.0,
-            "re": 16.8,
-            "llr": 23,
-            "bt": 10.2929,
-            "time": 0.120000,
+            "nsites": 25,
+            "evalue": "1.6e+002",
+            "ic": 8.6,
+            "re": 8.7,
+            "llr": 152,
+            "bt": 7.12998,
+            "time": 0.340000,
             "psm": [
-              [191, -765, -765, -765], [-765, -765, 216, -765], 
-              [-765, -765, 216, -765], [191, -765, -765, -765], 
-              [-765, -765, 216, -765], [-765, -765, 216, -765], 
-              [-765, -765, 216, -765], [-765, 209, -765, -765]
+              [-172, -1129, 111, 66], [-1129, 185, -247, -122], 
+              [-272, 145, -1129, 20], [167, -55, -1129, -1129], 
+              [152, -1129, 11, -1129], [-72, -1129, 192, -1129], 
+              [127, -1129, -148, 0], [28, -1129, 161, -1129]
             ],
             "pwm": [
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000]
+              [0.080000, 0.000000, 0.480000, 0.440000], 
+              [0.000000, 0.840000, 0.040000, 0.120000], 
+              [0.040000, 0.640000, 0.000000, 0.320000], 
+              [0.840000, 0.160000, 0.000000, 0.000000], 
+              [0.760000, 0.000000, 0.240000, 0.000000], 
+              [0.160000, 0.000000, 0.840000, 0.000000], 
+              [0.640000, 0.000000, 0.080000, 0.280000], 
+              [0.320000, 0.000000, 0.680000, 0.000000]
             ],
             "sites": [
               {
+                "seq": 12,
+                "pos": 76,
+                "rc": false,
+                "pvalue": 6.35e-05,
+                "lflank": "AGCCACCAGT",
+                "match": "GCCAAGTG",
+                "rflank": "TTCAAAGCCC"
+              }, {
+                "seq": 10,
+                "pos": 34,
+                "rc": false,
+                "pvalue": 7.29e-05,
+                "lflank": "AGAGAGGATT",
+                "match": "GCCAGGAG",
+                "rflank": "AACACATCGA"
+              }, {
                 "seq": 16,
+                "pos": 26,
+                "rc": false,
+                "pvalue": 1.33e-04,
+                "lflank": "gactatcaac",
+                "match": "TCCAGGAG",
+                "rflank": "ggcagagttc"
+              }, {
+                "seq": 13,
+                "pos": 35,
+                "rc": false,
+                "pvalue": 1.33e-04,
+                "lflank": "CCTGTCCAGG",
+                "match": "TCCAGGAG",
+                "rflank": "GAAATTCGGA"
+              }, {
+                "seq": 25,
+                "pos": 82,
+                "rc": false,
+                "pvalue": 1.43e-04,
+                "lflank": "CGTCCTGGCA",
+                "match": "GCCCAGAG",
+                "rflank": "GCCAAGGCCA"
+              }, {
+                "seq": 24,
+                "pos": 89,
+                "rc": false,
+                "pvalue": 1.43e-04,
+                "lflank": "AAGTTGTCTT",
+                "match": "GCCCAGAG",
+                "rflank": "TTA"
+              }, {
+                "seq": 6,
+                "pos": 27,
+                "rc": false,
+                "pvalue": 1.72e-04,
+                "lflank": "ctccttactt",
+                "match": "GCTAAGTG",
+                "rflank": "gtgagaatta"
+              }, {
+                "seq": 17,
+                "pos": 85,
+                "rc": false,
+                "pvalue": 2.11e-04,
+                "lflank": "TCATTAATCT",
+                "match": "GCTAGGAG",
+                "rflank": "TGCTCCT"
+              }, {
+                "seq": 26,
                 "pos": 29,
                 "rc": false,
-                "pvalue": 8.99e-06,
-                "lflank": "tatcaactcc",
-                "match": "AGGAGGGC",
-                "rflank": "agagttcttc"
-              }, {
-                "seq": 14,
-                "pos": 67,
-                "rc": false,
-                "pvalue": 8.99e-06,
-                "lflank": "TACCACATTT",
-                "match": "AGGAGGGC",
-                "rflank": "TTATGATGAT"
-              }
-            ]
-          }, {
-            "db": 0,
-            "id": "GGGGTGRG",
-            "alt": "MEME-2",
-            "len": 8,
-            "nsites": 2,
-            "evalue": "2.1e+003",
-            "ic": 15.0,
-            "re": 15.9,
-            "llr": 22,
-            "bt": 10.2929,
-            "time": 0.212000,
-            "psm": [
-              [-765, -765, 216, -765], [-765, -765, 216, -765], 
-              [-765, -765, 216, -765], [-765, -765, 216, -765], 
-              [-765, -765, -765, 184], [-765, -765, 216, -765], 
-              [92, -765, 116, -765], [-765, -765, 216, -765]
-            ],
-            "pwm": [
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 0.000000, 1.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.500000, 0.000000, 0.500000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000]
-            ],
-            "sites": [
-              {
-                "seq": 4,
-                "pos": 90,
-                "rc": false,
-                "pvalue": 7.65e-06,
-                "lflank": "TGGGGAAGCT",
-                "match": "GGGGTGGG",
-                "rflank": "AT"
+                "pvalue": 2.54e-04,
+                "lflank": "GGGCACCCCT",
+                "match": "TCCCAGAG",
+                "rflank": "CCTGGGCCCA"
               }, {
                 "seq": 23,
-                "pos": 33,
+                "pos": 62,
                 "rc": false,
-                "pvalue": 1.67e-05,
-                "lflank": "TCGCCTCCCT",
-                "match": "GGGGTGAG",
-                "rflank": "ACGTTCGACG"
+                "pvalue": 2.67e-04,
+                "lflank": "GTCAGACTTC",
+                "match": "ACCAAGAG",
+                "rflank": "CATCTCCCGC"
+              }, {
+                "seq": 18,
+                "pos": 11,
+                "rc": false,
+                "pvalue": 3.18e-04,
+                "lflank": "gcagttacat",
+                "match": "TCTAAGAA",
+                "rflank": "aaacaatgtc"
+              }, {
+                "seq": 22,
+                "pos": 73,
+                "rc": false,
+                "pvalue": 3.66e-04,
+                "lflank": "GAGTGACTTT",
+                "match": "TCCAAGTA",
+                "rflank": "AAGATCATCA"
+              }, {
+                "seq": 21,
+                "pos": 59,
+                "rc": false,
+                "pvalue": 4.55e-04,
+                "lflank": "CGACCCTCAA",
+                "match": "GCCCAGTG",
+                "rflank": "GAACCCCAGT"
+              }, {
+                "seq": 20,
+                "pos": 21,
+                "rc": false,
+                "pvalue": 4.96e-04,
+                "lflank": "AAAGGAGATA",
+                "match": "GCTAAGTA",
+                "rflank": "TTTCTTGTAG"
+              }, {
+                "seq": 3,
+                "pos": 0,
+                "rc": false,
+                "pvalue": 4.96e-04,
+                "lflank": "",
+                "match": "GCTAAAAG",
+                "rflank": "aaaaactccc"
+              }, {
+                "seq": 4,
+                "pos": 27,
+                "rc": false,
+                "pvalue": 6.67e-04,
+                "lflank": "GCTCCTATCA",
+                "match": "GCAAAGAG",
+                "rflank": "GGTAAGTCTC"
+              }, {
+                "seq": 0,
+                "pos": 58,
+                "rc": false,
+                "pvalue": 7.41e-04,
+                "lflank": "ACGTGAAAGT",
+                "match": "GGCAAGAG",
+                "rflank": "ATGTCAAGAC"
+              }, {
+                "seq": 15,
+                "pos": 11,
+                "rc": false,
+                "pvalue": 9.17e-04,
+                "lflank": "CATGGCCCTC",
+                "match": "TCCAAAAA",
+                "rflank": "AAATCAAGGA"
+              }, {
+                "seq": 8,
+                "pos": 67,
+                "rc": false,
+                "pvalue": 9.17e-04,
+                "lflank": "ACATTTCAGC",
+                "match": "TCCAAAAA",
+                "rflank": "AAAAAGTCTT"
+              }, {
+                "seq": 2,
+                "pos": 30,
+                "rc": false,
+                "pvalue": 9.75e-04,
+                "lflank": "CACCCGCATA",
+                "match": "TCCAAGGA",
+                "rflank": "CACCACATCA"
+              }, {
+                "seq": 7,
+                "pos": 81,
+                "rc": false,
+                "pvalue": 1.12e-03,
+                "lflank": "TGTTTTTGTG",
+                "match": "TTCAAGAA",
+                "rflank": "ATGATTGATG"
+              }, {
+                "seq": 9,
+                "pos": 56,
+                "rc": false,
+                "pvalue": 1.31e-03,
+                "lflank": "GAACGACTAG",
+                "match": "GCTAAGGA",
+                "rflank": "ACAGTCCTCT"
+              }, {
+                "seq": 14,
+                "pos": 64,
+                "rc": false,
+                "pvalue": 2.27e-03,
+                "lflank": "AAATACCACA",
+                "match": "TTTAGGAG",
+                "rflank": "GGCTTATGAT"
+              }, {
+                "seq": 5,
+                "pos": 59,
+                "rc": false,
+                "pvalue": 3.03e-03,
+                "lflank": "CGCCTCTGTC",
+                "match": "ACTAGGTG",
+                "rflank": "ATTCTGTCTA"
+              }, {
+                "seq": 11,
+                "pos": 61,
+                "rc": false,
+                "pvalue": 4.00e-03,
+                "lflank": "TTTTATCAAG",
+                "match": "TTCAAATG",
+                "rflank": "CAAACTTAAT"
               }
             ]
           }, {
             "db": 0,
             "id": "GCTGCAGG",
-            "alt": "MEME-3",
+            "alt": "MEME-2",
             "len": 8,
-            "nsites": 2,
-            "evalue": "2.9e+003",
-            "ic": 16.0,
-            "re": 16.6,
-            "llr": 23,
-            "bt": 10.2929,
-            "time": 0.300000,
+            "nsites": 4,
+            "evalue": "1.0e+003",
+            "ic": 14.4,
+            "re": 14.9,
+            "llr": 41,
+            "bt": 9.29175,
+            "time": 0.652000,
             "psm": [
-              [-765, -765, 216, -765], [-765, 209, -765, -765], 
-              [-765, -765, -765, 184], [-765, -765, 216, -765], 
-              [-765, 209, -765, -765], [191, -765, -765, -765], 
-              [-765, -765, 216, -765], [-765, -765, 216, -765]
+              [-865, 10, 175, -865], [-8, 168, -865, -865], 
+              [-865, -865, -865, 184], [-865, -865, 216, -865], 
+              [-865, 209, -865, -865], [192, -865, -865, -865], 
+              [-865, -865, 216, -865], [-865, -865, 216, -865]
             ],
             "pwm": [
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 0.250000, 0.750000, 0.000000], 
+              [0.250000, 0.750000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 0.000000, 1.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
               [0.000000, 1.000000, 0.000000, 0.000000], 
@@ -368,53 +505,244 @@
                 "lflank": "TTATCTAGGT",
                 "match": "GCTGCAGG",
                 "rflank": "TTTAGAGAGG"
+              }, {
+                "seq": 11,
+                "pos": 22,
+                "rc": false,
+                "pvalue": 2.04e-05,
+                "lflank": "TCGTATGTGA",
+                "match": "CCTGCAGG",
+                "rflank": "GAAGTAAGTT"
+              }, {
+                "seq": 8,
+                "pos": 27,
+                "rc": false,
+                "pvalue": 3.17e-05,
+                "lflank": "agatcattct",
+                "match": "GATGCAGG",
+                "rflank": "tggctcatgg"
               }
             ]
           }, {
             "db": 0,
-            "id": "GCCCAGAG",
-            "alt": "MEME-4",
+            "id": "KCTKGGGT",
+            "alt": "MEME-3",
             "len": 8,
-            "nsites": 2,
-            "evalue": "3.8e+003",
-            "ic": 16.0,
-            "re": 16.6,
-            "llr": 23,
-            "bt": 10.2929,
-            "time": 0.388000,
+            "nsites": 9,
+            "evalue": "1.5e+003",
+            "ic": 11.6,
+            "re": 12.0,
+            "llr": 75,
+            "bt": 8.2537,
+            "time": 0.940000,
             "psm": [
-              [-765, -765, 216, -765], [-765, 209, -765, -765], 
-              [-765, 209, -765, -765], [-765, 209, -765, -765], 
-              [191, -765, -765, -765], [-765, -765, 216, -765], 
-              [191, -765, -765, -765], [-765, -765, 216, -765]
+              [-982, -107, 132, 26], [-982, 173, 0, -982], 
+              [-982, -982, -982, 184], [-125, -107, 58, 67], 
+              [-982, -982, 217, -982], [-982, -982, 217, -982], 
+              [-982, -107, 200, -982], [-982, -982, -982, 184]
             ],
             "pwm": [
+              [0.000000, 0.111111, 0.555556, 0.333333], 
+              [0.000000, 0.777778, 0.222222, 0.000000], 
+              [0.000000, 0.000000, 0.000000, 1.000000], 
+              [0.111111, 0.111111, 0.333333, 0.444444], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000]
+              [0.000000, 0.111111, 0.888889, 0.000000], 
+              [0.000000, 0.000000, 0.000000, 1.000000]
             ],
             "sites": [
               {
                 "seq": 25,
-                "pos": 82,
+                "pos": 0,
                 "rc": false,
-                "pvalue": 9.90e-06,
-                "lflank": "CGTCCTGGCA",
-                "match": "GCCCAGAG",
-                "rflank": "GCCAAGGCCA"
+                "pvalue": 2.26e-05,
+                "lflank": "",
+                "match": "GCTTGGGT",
+                "rflank": "CAGGCTATCA"
+              }, {
+                "seq": 4,
+                "pos": 87,
+                "rc": false,
+                "pvalue": 2.26e-05,
+                "lflank": "CTTTGGGGAA",
+                "match": "GCTGGGGT",
+                "rflank": "GGGAT"
+              }, {
+                "seq": 9,
+                "pos": 19,
+                "rc": false,
+                "pvalue": 5.09e-05,
+                "lflank": "CCTCTCATCA",
+                "match": "TCTTGGGT",
+                "rflank": "TTTCACACTG"
               }, {
                 "seq": 24,
+                "pos": 19,
+                "rc": false,
+                "pvalue": 8.30e-05,
+                "lflank": "TTAAGTTGTA",
+                "match": "GGTGGGGT",
+                "rflank": "GCTGTTAAAG"
+              }, {
+                "seq": 19,
+                "pos": 79,
+                "rc": false,
+                "pvalue": 8.30e-05,
+                "lflank": "aaattaaaat",
+                "match": "GGTTGGGT",
+                "rflank": "tttatgaagc"
+              }, {
+                "seq": 23,
+                "pos": 30,
+                "rc": false,
+                "pvalue": 1.19e-04,
+                "lflank": "TGGTCGCCTC",
+                "match": "CCTGGGGT",
+                "rflank": "GAGACGTTCG"
+              }, {
+                "seq": 13,
+                "pos": 5,
+                "rc": false,
+                "pvalue": 1.59e-04,
+                "lflank": "CAGGA",
+                "match": "TCTCGGGT",
+                "rflank": "TCGACCATGA"
+              }, {
+                "seq": 5,
+                "pos": 73,
+                "rc": false,
+                "pvalue": 1.74e-04,
+                "lflank": "GGTGATTCTG",
+                "match": "TCTAGGGT",
+                "rflank": "AGACATCTTT"
+              }, {
+                "seq": 17,
+                "pos": 13,
+                "rc": false,
+                "pvalue": 1.97e-04,
+                "lflank": "GAGTCAAAAA",
+                "match": "GCTTGGCT",
+                "rflank": "GTGCTGTCTT"
+              }
+            ]
+          }, {
+            "db": 0,
+            "id": "AGNCCTGT",
+            "alt": "MEME-4",
+            "len": 8,
+            "nsites": 11,
+            "evalue": "2.1e+003",
+            "ic": 11.2,
+            "re": 11.2,
+            "llr": 86,
+            "bt": 8.85798,
+            "time": 1.216000,
+            "psm": [
+              [192, -1010, -1010, -1010], [-1010, -1010, 217, -1010], 
+              [4, 22, -29, -3], [-154, 196, -1010, -1010], 
+              [-1010, 210, -1010, -1010], [-1010, -1010, -1010, 184], 
+              [-154, -36, 129, -62], [-54, -1010, -1010, 155]
+            ],
+            "pwm": [
+              [1.000000, 0.000000, 0.000000, 0.000000], 
+              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [0.272727, 0.272727, 0.181818, 0.272727], 
+              [0.090909, 0.909091, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 0.000000, 0.000000, 1.000000], 
+              [0.090909, 0.181818, 0.545455, 0.181818], 
+              [0.181818, 0.000000, 0.000000, 0.818182]
+            ],
+            "sites": [
+              {
+                "seq": 24,
+                "pos": 65,
+                "rc": false,
+                "pvalue": 2.79e-05,
+                "lflank": "TGTTCAGCTG",
+                "match": "AGACCTGT",
+                "rflank": "GAGTTCAAGT"
+              }, {
+                "seq": 14,
+                "pos": 9,
+                "rc": false,
+                "pvalue": 2.79e-05,
+                "lflank": "CCTCTGTAA",
+                "match": "AGACCTGT",
+                "rflank": "CCTTCTATGT"
+              }, {
+                "seq": 13,
+                "pos": 22,
+                "rc": false,
+                "pvalue": 4.35e-05,
+                "lflank": "TTCGACCATG",
+                "match": "AGTCCTGT",
+                "rflank": "CCAGGTCCAG"
+              }, {
+                "seq": 10,
+                "pos": 58,
+                "rc": false,
+                "pvalue": 5.60e-05,
+                "lflank": "TCGATTTTTC",
+                "match": "AGGCCTGT",
+                "rflank": "GATGACGTAT"
+              }, {
+                "seq": 20,
+                "pos": 37,
+                "rc": false,
+                "pvalue": 6.97e-05,
+                "lflank": "TATTTCTTGT",
+                "match": "AGCCCTCT",
+                "rflank": "AGAACGTCGT"
+              }, {
+                "seq": 18,
+                "pos": 34,
+                "rc": false,
+                "pvalue": 1.18e-04,
+                "lflank": "atgtccaggg",
+                "match": "AGCCCTTT",
+                "rflank": "tatctcccgc"
+              }, {
+                "seq": 9,
+                "pos": 66,
+                "rc": false,
+                "pvalue": 1.18e-04,
+                "lflank": "GCTAAGGAAC",
+                "match": "AGTCCTCT",
+                "rflank": "GTAACCATTT"
+              }, {
+                "seq": 26,
+                "pos": 86,
+                "rc": false,
+                "pvalue": 2.10e-04,
+                "lflank": "AATGCATCAA",
+                "match": "AGTCCTGA",
+                "rflank": "GTGAGC"
+              }, {
+                "seq": 6,
+                "pos": 75,
+                "rc": false,
+                "pvalue": 3.04e-04,
+                "lflank": "tgtttagaac",
+                "match": "AGGCCTAT",
+                "rflank": "gttcagcgct"
+              }, {
+                "seq": 16,
+                "pos": 80,
+                "rc": false,
+                "pvalue": 3.35e-04,
+                "lflank": "cactgagtcc",
+                "match": "AGAACTGT",
+                "rflank": "ATAGCAGTTT"
+              }, {
+                "seq": 12,
                 "pos": 89,
                 "rc": false,
-                "pvalue": 9.90e-06,
-                "lflank": "AAGTTGTCTT",
-                "match": "GCCCAGAG",
-                "rflank": "TTA"
+                "pvalue": 4.26e-04,
+                "lflank": "AAGTGTTCAA",
+                "match": "AGCCCTTA",
+                "rflank": "GAA"
               }
             ]
           }, {
@@ -428,7 +756,7 @@
             "re": 16.4,
             "llr": 23,
             "bt": 10.2929,
-            "time": 0.472000,
+            "time": 1.476000,
             "psm": [
               [-765, -765, 216, -765], [-765, 209, -765, -765], 
               [191, -765, -765, -765], [-765, -765, 216, -765], 
@@ -466,465 +794,520 @@
             ]
           }, {
             "db": 0,
-            "id": "GGTRAAAA",
+            "id": "AGGGCASC",
             "alt": "MEME-6",
             "len": 8,
             "nsites": 2,
-            "evalue": "4.9e+004",
+            "evalue": "8.4e+003",
             "ic": 15.0,
-            "re": 14.9,
-            "llr": 21,
+            "re": 15.7,
+            "llr": 22,
             "bt": 10.2929,
-            "time": 0.560000,
+            "time": 1.728000,
             "psm": [
+              [191, -765, -765, -765], [-765, -765, 216, -765], 
               [-765, -765, 216, -765], [-765, -765, 216, -765], 
-              [-765, -765, -765, 184], [92, -765, 116, -765], 
-              [191, -765, -765, -765], [191, -765, -765, -765], 
-              [191, -765, -765, -765], [191, -765, -765, -765]
+              [-765, 209, -765, -765], [191, -765, -765, -765], 
+              [-765, 109, 116, -765], [-765, 209, -765, -765]
             ],
             "pwm": [
+              [1.000000, 0.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 0.000000, 1.000000], 
-              [0.500000, 0.000000, 0.500000, 0.000000], 
+              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
               [1.000000, 0.000000, 0.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000]
+              [0.000000, 0.500000, 0.500000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000]
             ],
             "sites": [
               {
-                "seq": 21,
-                "pos": 39,
+                "seq": 15,
+                "pos": 77,
                 "rc": false,
-                "pvalue": 1.50e-05,
-                "lflank": "TCCTTCAAAA",
-                "match": "GGTGAAAA",
-                "rflank": "ATCGACCCTC"
+                "pvalue": 9.44e-06,
+                "lflank": "CTTACTGGTT",
+                "match": "AGGGCAGC",
+                "rflank": "TCCTCTTTGC"
               }, {
-                "seq": 8,
-                "pos": 50,
+                "seq": 26,
+                "pos": 18,
                 "rc": false,
-                "pvalue": 3.28e-05,
-                "lflank": "catggaccac",
-                "match": "GGTAAAAA",
-                "rflank": "CATTTCAGCT"
+                "pvalue": 1.93e-05,
+                "lflank": "CAGGATCCAG",
+                "match": "AGGGCACC",
+                "rflank": "CCTTCCCAGA"
               }
             ]
           }, {
             "db": 0,
-            "id": "GGTGAGAA",
+            "id": "CCCGCCTY",
             "alt": "MEME-7",
             "len": 8,
-            "nsites": 2,
-            "evalue": "5.7e+003",
-            "ic": 16.0,
-            "re": 16.3,
-            "llr": 23,
-            "bt": 10.2929,
-            "time": 0.644000,
+            "nsites": 3,
+            "evalue": "9.0e+003",
+            "ic": 15.1,
+            "re": 15.6,
+            "llr": 32,
+            "bt": 10.1553,
+            "time": 1.980000,
             "psm": [
-              [-765, -765, 216, -765], [-765, -765, 216, -765], 
-              [-765, -765, -765, 184], [-765, -765, 216, -765], 
-              [191, -765, -765, -765], [-765, -765, 216, -765], 
-              [191, -765, -765, -765], [191, -765, -765, -765]
+              [-823, 209, -823, -823], [-823, 209, -823, -823], 
+              [-823, 209, -823, -823], [-823, -823, 216, -823], 
+              [-823, 209, -823, -823], [-823, 209, -823, -823], 
+              [-823, -823, -823, 184], [-823, 151, -823, 25]
             ],
             "pwm": [
+              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 0.000000, 1.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000]
+              [0.000000, 0.666667, 0.000000, 0.333333]
             ],
             "sites": [
               {
-                "seq": 6,
-                "pos": 34,
+                "seq": 23,
+                "pos": 75,
                 "rc": false,
-                "pvalue": 1.27e-05,
-                "lflank": "cttgctaagt",
-                "match": "GGTGAGAA",
-                "rflank": "ttaaacacgt"
+                "pvalue": 1.02e-05,
+                "lflank": "AAGAGCATCT",
+                "match": "CCCGCCTC",
+                "rflank": "GGTGCAGTAA"
               }, {
-                "seq": 4,
-                "pos": 63,
+                "seq": 5,
+                "pos": 47,
                 "rc": false,
-                "pvalue": 1.27e-05,
-                "lflank": "ATAAGGACAT",
-                "match": "GGTGAGAA",
-                "rflank": "ACAGAGCTTT"
+                "pvalue": 1.02e-05,
+                "lflank": "AATGCTTTGC",
+                "match": "CCCGCCTC",
+                "rflank": "TGTCACTAGG"
+              }, {
+                "seq": 18,
+                "pos": 47,
+                "rc": false,
+                "pvalue": 2.24e-05,
+                "lflank": "ccttttatct",
+                "match": "CCCGCCTT",
+                "rflank": "actcttgtta"
               }
             ]
           }, {
             "db": 0,
-            "id": "TGTCCAGG",
+            "id": "TGCTGTGA",
             "alt": "MEME-8",
             "len": 8,
             "nsites": 2,
-            "evalue": "8.5e+003",
+            "evalue": "1.5e+004",
             "ic": 16.0,
-            "re": 16.3,
-            "llr": 23,
-            "bt": 10.2929,
-            "time": 0.732000,
+            "re": 16.0,
+            "llr": 22,
+            "bt": 9.44398,
+            "time": 2.240000,
             "psm": [
               [-765, -765, -765, 184], [-765, -765, 216, -765], 
-              [-765, -765, -765, 184], [-765, 209, -765, -765], 
-              [-765, 209, -765, -765], [191, -765, -765, -765], 
-              [-765, -765, 216, -765], [-765, -765, 216, -765]
+              [-765, 209, -765, -765], [-765, -765, -765, 184], 
+              [-765, -765, 216, -765], [-765, -765, -765, 184], 
+              [-765, -765, 216, -765], [191, -765, -765, -765]
             ],
             "pwm": [
               [0.000000, 0.000000, 0.000000, 1.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 0.000000, 1.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
-              [1.000000, 0.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000]
+              [0.000000, 0.000000, 0.000000, 1.000000], 
+              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [1.000000, 0.000000, 0.000000, 0.000000]
             ],
             "sites": [
               {
-                "seq": 18,
-                "pos": 25,
+                "seq": 22,
+                "pos": 37,
                 "rc": false,
-                "pvalue": 1.25e-05,
-                "lflank": "agaaaaacaa",
-                "match": "TGTCCAGG",
-                "rflank": "gagccctttt"
+                "pvalue": 1.49e-05,
+                "lflank": "AAGAAGTAAC",
+                "match": "TGCTGTGA",
+                "rflank": "TTAACGGGTT"
               }, {
-                "seq": 13,
-                "pos": 27,
+                "seq": 1,
+                "pos": 30,
                 "rc": false,
-                "pvalue": 1.25e-05,
-                "lflank": "CCATGAGTCC",
-                "match": "TGTCCAGG",
-                "rflank": "TCCAGGAGGA"
+                "pvalue": 1.49e-05,
+                "lflank": "actgccatct",
+                "match": "TGCTGTGA",
+                "rflank": "aatgtgcaca"
               }
             ]
           }, {
             "db": 0,
-            "id": "GCARGTKG",
+            "id": "SAAGGACC",
             "alt": "MEME-9",
             "len": 8,
             "nsites": 2,
-            "evalue": "4.1e+004",
-            "ic": 14.0,
-            "re": 14.4,
-            "llr": 20,
-            "bt": 10.2929,
-            "time": 0.812000,
+            "evalue": "1.8e+004",
+            "ic": 15.0,
+            "re": 15.4,
+            "llr": 21,
+            "bt": 9.44398,
+            "time": 2.500000,
             "psm": [
-              [-765, -765, 216, -765], [-765, 209, -765, -765], 
-              [191, -765, -765, -765], [92, -765, 116, -765], 
-              [-765, -765, 216, -765], [-765, -765, -765, 184], 
-              [-765, -765, 116, 84], [-765, -765, 216, -765]
+              [-765, 109, 116, -765], [191, -765, -765, -765], 
+              [191, -765, -765, -765], [-765, -765, 216, -765], 
+              [-765, -765, 216, -765], [191, -765, -765, -765], 
+              [-765, 209, -765, -765], [-765, 209, -765, -765]
             ],
             "pwm": [
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 0.500000, 0.500000, 0.000000], 
               [1.000000, 0.000000, 0.000000, 0.000000], 
-              [0.500000, 0.000000, 0.500000, 0.000000], 
+              [1.000000, 0.000000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 0.000000, 1.000000], 
-              [0.000000, 0.000000, 0.500000, 0.500000], 
-              [0.000000, 0.000000, 1.000000, 0.000000]
+              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [1.000000, 0.000000, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000]
             ],
             "sites": [
               {
-                "seq": 8,
-                "pos": 30,
+                "seq": 13,
+                "pos": 51,
                 "rc": false,
-                "pvalue": 9.50e-06,
-                "lflank": "tcattctgat",
-                "match": "GCAGGTGG",
-                "rflank": "ctcatggacc"
+                "pvalue": 1.12e-05,
+                "lflank": "AGGAAATTCG",
+                "match": "GAAGGACC",
+                "rflank": "ACATGTTCAC"
               }, {
-                "seq": 20,
-                "pos": 69,
+                "seq": 15,
+                "pos": 23,
                 "rc": false,
-                "pvalue": 4.67e-05,
-                "lflank": "AGAATCCCTG",
-                "match": "GCAAGTTG",
-                "rflank": "GTTAAAAATG"
+                "pvalue": 2.29e-05,
+                "lflank": "CAAAAAAAAT",
+                "match": "CAAGGACC",
+                "rflank": "TGCTACAAAG"
               }
             ]
           }, {
             "db": 0,
-            "id": "KCTTGGGT",
+            "id": "GGACMGCC",
             "alt": "MEME-10",
             "len": 8,
             "nsites": 2,
-            "evalue": "3.6e+004",
+            "evalue": "9.4e+003",
             "ic": 15.0,
-            "re": 15.1,
-            "llr": 21,
+            "re": 15.7,
+            "llr": 22,
             "bt": 10.2929,
-            "time": 0.900000,
+            "time": 2.748000,
             "psm": [
-              [-765, -765, 116, 84], [-765, 209, -765, -765], 
-              [-765, -765, -765, 184], [-765, -765, -765, 184], 
               [-765, -765, 216, -765], [-765, -765, 216, -765], 
-              [-765, -765, 216, -765], [-765, -765, -765, 184]
+              [191, -765, -765, -765], [-765, 209, -765, -765], 
+              [92, 109, -765, -765], [-765, -765, 216, -765], 
+              [-765, 209, -765, -765], [-765, 209, -765, -765]
             ],
             "pwm": [
-              [0.000000, 0.000000, 0.500000, 0.500000], 
+              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [0.000000, 0.000000, 1.000000, 0.000000], 
+              [1.000000, 0.000000, 0.000000, 0.000000], 
               [0.000000, 1.000000, 0.000000, 0.000000], 
-              [0.000000, 0.000000, 0.000000, 1.000000], 
-              [0.000000, 0.000000, 0.000000, 1.000000], 
+              [0.500000, 0.500000, 0.000000, 0.000000], 
               [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 1.000000, 0.000000], 
-              [0.000000, 0.000000, 0.000000, 1.000000]
+              [0.000000, 1.000000, 0.000000, 0.000000], 
+              [0.000000, 1.000000, 0.000000, 0.000000]
             ],
             "sites": [
               {
                 "seq": 25,
-                "pos": 0,
+                "pos": 45,
                 "rc": false,
-                "pvalue": 1.26e-05,
-                "lflank": "",
-                "match": "GCTTGGGT",
-                "rflank": "CAGGCTATCA"
+                "pvalue": 8.78e-06,
+                "lflank": "TGGGTCCCCA",
+                "match": "GGACCGCC",
+                "rflank": "ACCACCCACA"
               }, {
-                "seq": 9,
-                "pos": 19,
+                "seq": 2,
+                "pos": 4,
                 "rc": false,
-                "pvalue": 2.83e-05,
-                "lflank": "CCTCTCATCA",
-                "match": "TCTTGGGT",
-                "rflank": "TTTCACACTG"
+                "pvalue": 1.87e-05,
+                "lflank": "CTTT",
+                "match": "GGACAGCC",
+                "rflank": "TCGGATTGCA"
               }
             ]
           }
         ],
         "scan": [
           {
-            "pvalue": 7.76e-03,
+            "pvalue": 2.24e-02,
             "sites": [
               {
                 "motif": 4,
                 "pos": 41,
                 "rc": false,
                 "pvalue": 1.13e-05
-              }, {
-                "motif": 8,
-                "pos": 82,
-                "rc": false,
-                "pvalue": 4.67e-05
               }
             ]
           }, {
-            "pvalue": 8.04e-01,
-            "sites": []
-          }, {
-            "pvalue": 6.22e-01,
-            "sites": []
-          }, {
-            "pvalue": 9.67e-01,
-            "sites": []
-          }, {
-            "pvalue": 8.74e-06,
+            "pvalue": 3.59e-01,
             "sites": [
               {
-                "motif": 6,
-                "pos": 63,
-                "rc": false,
-                "pvalue": 1.27e-05
-              }, {
-                "motif": 1,
-                "pos": 90,
-                "rc": false,
-                "pvalue": 7.65e-06
-              }
-            ]
-          }, {
-            "pvalue": 1.14e-01,
-            "sites": []
-          }, {
-            "pvalue": 1.69e-02,
-            "sites": [
-              {
-                "motif": 6,
-                "pos": 34,
-                "rc": false,
-                "pvalue": 1.27e-05
-              }
-            ]
-          }, {
-            "pvalue": 8.47e-01,
-            "sites": []
-          }, {
-            "pvalue": 5.82e-04,
-            "sites": [
-              {
-                "motif": 8,
+                "motif": 7,
                 "pos": 30,
                 "rc": false,
-                "pvalue": 9.50e-06
-              }, {
-                "motif": 5,
-                "pos": 50,
-                "rc": false,
-                "pvalue": 3.28e-05
+                "pvalue": 1.49e-05
               }
             ]
           }, {
-            "pvalue": 5.94e-01,
+            "pvalue": 4.26e-03,
             "sites": [
               {
                 "motif": 9,
-                "pos": 19,
+                "pos": 4,
                 "rc": false,
-                "pvalue": 2.83e-05
+                "pvalue": 1.87e-05
               }
             ]
           }, {
-            "pvalue": 6.24e-03,
+            "pvalue": 6.06e-01,
+            "sites": []
+          }, {
+            "pvalue": 3.38e-03,
             "sites": [
               {
                 "motif": 2,
-                "pos": 13,
+                "pos": 87,
                 "rc": false,
-                "pvalue": 9.97e-06
+                "pvalue": 2.26e-05
               }
             ]
           }, {
-            "pvalue": 3.37e-01,
+            "pvalue": 1.35e-03,
+            "sites": [
+              {
+                "motif": 6,
+                "pos": 47,
+                "rc": false,
+                "pvalue": 1.02e-05
+              }
+            ]
+          }, {
+            "pvalue": 1.98e-01,
             "sites": []
           }, {
-            "pvalue": 3.73e-02,
+            "pvalue": 6.01e-01,
+            "sites": []
+          }, {
+            "pvalue": 4.34e-03,
+            "sites": [
+              {
+                "motif": 1,
+                "pos": 27,
+                "rc": false,
+                "pvalue": 3.17e-05
+              }
+            ]
+          }, {
+            "pvalue": 1.93e-02,
+            "sites": [
+              {
+                "motif": 2,
+                "pos": 19,
+                "rc": false,
+                "pvalue": 5.09e-05
+              }
+            ]
+          }, {
+            "pvalue": 3.11e-04,
+            "sites": [
+              {
+                "motif": 1,
+                "pos": 13,
+                "rc": false,
+                "pvalue": 9.97e-06
+              }, {
+                "motif": 0,
+                "pos": 34,
+                "rc": false,
+                "pvalue": 7.29e-05
+              }, {
+                "motif": 3,
+                "pos": 58,
+                "rc": false,
+                "pvalue": 5.60e-05
+              }
+            ]
+          }, {
+            "pvalue": 2.63e-02,
+            "sites": [
+              {
+                "motif": 1,
+                "pos": 22,
+                "rc": false,
+                "pvalue": 2.04e-05
+              }
+            ]
+          }, {
+            "pvalue": 1.00e-03,
             "sites": [
               {
                 "motif": 4,
                 "pos": 27,
                 "rc": false,
                 "pvalue": 1.13e-05
-              }
-            ]
-          }, {
-            "pvalue": 1.69e-02,
-            "sites": [
-              {
-                "motif": 7,
-                "pos": 27,
-                "rc": false,
-                "pvalue": 1.25e-05
-              }
-            ]
-          }, {
-            "pvalue": 1.81e-01,
-            "sites": [
-              {
+              }, {
                 "motif": 0,
-                "pos": 67,
+                "pos": 76,
                 "rc": false,
-                "pvalue": 8.99e-06
+                "pvalue": 6.35e-05
               }
             ]
           }, {
-            "pvalue": 9.64e-01,
-            "sites": []
-          }, {
-            "pvalue": 3.76e-03,
+            "pvalue": 3.09e-05,
             "sites": [
               {
-                "motif": 0,
-                "pos": 29,
+                "motif": 3,
+                "pos": 22,
                 "rc": false,
-                "pvalue": 8.99e-06
+                "pvalue": 4.35e-05
+              }, {
+                "motif": 8,
+                "pos": 51,
+                "rc": false,
+                "pvalue": 1.12e-05
               }
             ]
           }, {
-            "pvalue": 4.77e-02,
-            "sites": []
-          }, {
-            "pvalue": 1.13e-01,
+            "pvalue": 5.68e-02,
             "sites": [
               {
-                "motif": 7,
-                "pos": 25,
+                "motif": 3,
+                "pos": 9,
                 "rc": false,
-                "pvalue": 1.25e-05
+                "pvalue": 2.79e-05
               }
             ]
           }, {
-            "pvalue": 1.12e-01,
-            "sites": []
-          }, {
-            "pvalue": 1.55e-01,
+            "pvalue": 3.06e-03,
             "sites": [
               {
                 "motif": 8,
-                "pos": 69,
+                "pos": 23,
                 "rc": false,
-                "pvalue": 4.67e-05
+                "pvalue": 2.29e-05
+              }, {
+                "motif": 5,
+                "pos": 77,
+                "rc": false,
+                "pvalue": 9.44e-06
               }
             ]
           }, {
-            "pvalue": 1.56e-04,
+            "pvalue": 1.22e-02,
+            "sites": []
+          }, {
+            "pvalue": 1.55e-02,
+            "sites": []
+          }, {
+            "pvalue": 7.97e-03,
             "sites": [
               {
-                "motif": 5,
-                "pos": 39,
+                "motif": 6,
+                "pos": 47,
                 "rc": false,
-                "pvalue": 1.50e-05
-              }, {
-                "motif": 3,
-                "pos": 59,
-                "rc": false,
-                "pvalue": 6.51e-05
-              }, {
+                "pvalue": 2.24e-05
+              }
+            ]
+          }, {
+            "pvalue": 1.36e-01,
+            "sites": [
+              {
                 "motif": 2,
+                "pos": 79,
+                "rc": false,
+                "pvalue": 8.30e-05
+              }
+            ]
+          }, {
+            "pvalue": 4.99e-01,
+            "sites": [
+              {
+                "motif": 3,
+                "pos": 37,
+                "rc": false,
+                "pvalue": 6.97e-05
+              }
+            ]
+          }, {
+            "pvalue": 3.08e-02,
+            "sites": [
+              {
+                "motif": 1,
                 "pos": 78,
                 "rc": false,
                 "pvalue": 9.97e-06
               }
             ]
           }, {
-            "pvalue": 9.22e-01,
-            "sites": []
-          }, {
-            "pvalue": 9.88e-03,
+            "pvalue": 1.67e-01,
             "sites": [
               {
-                "motif": 1,
-                "pos": 33,
+                "motif": 7,
+                "pos": 37,
                 "rc": false,
-                "pvalue": 1.67e-05
+                "pvalue": 1.49e-05
               }
             ]
           }, {
-            "pvalue": 2.25e-04,
+            "pvalue": 6.71e-04,
             "sites": [
               {
-                "motif": 3,
-                "pos": 89,
+                "motif": 6,
+                "pos": 75,
                 "rc": false,
-                "pvalue": 9.90e-06
+                "pvalue": 1.02e-05
               }
             ]
           }, {
-            "pvalue": 3.39e-04,
+            "pvalue": 1.12e-03,
             "sites": [
               {
-                "motif": 9,
-                "pos": 0,
+                "motif": 2,
+                "pos": 19,
                 "rc": false,
-                "pvalue": 1.26e-05
+                "pvalue": 8.30e-05
               }, {
                 "motif": 3,
-                "pos": 82,
+                "pos": 65,
                 "rc": false,
-                "pvalue": 9.90e-06
+                "pvalue": 2.79e-05
               }
             ]
           }, {
-            "pvalue": 1.25e-02,
-            "sites": []
+            "pvalue": 1.06e-06,
+            "sites": [
+              {
+                "motif": 2,
+                "pos": 0,
+                "rc": false,
+                "pvalue": 2.26e-05
+              }, {
+                "motif": 9,
+                "pos": 45,
+                "rc": false,
+                "pvalue": 8.78e-06
+              }
+            ]
+          }, {
+            "pvalue": 4.06e-04,
+            "sites": [
+              {
+                "motif": 5,
+                "pos": 18,
+                "rc": false,
+                "pvalue": 1.93e-05
+              }
+            ]
           }
         ]
       };
