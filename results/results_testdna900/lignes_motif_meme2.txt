@@ -1,0 +1,92 @@
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_55100558_55100     77  6.35e-05 AGCCACCAGT GCCAAGTG TTCAAAGCCC
+hg19_chr7_55098846_55098     35  7.29e-05 AGAGAGGATT GCCAGGAG AACACATCGA
+hg19_chr7_55119638_55119     27  1.33e-04 gactatcaac tccaggag ggcagagttc
+hg19_chr7_55141921_55142     36  1.33e-04 CCTGTCCAGG TCCAGGAG GAAATTCGGA
+hg19_chr7_127222470_1272     83  1.43e-04 CGTCCTGGCA GCCCAGAG GCCAAGGCCA
+hg19_chr7_114053938_1140     90  1.43e-04 AAGTTGTCTT GCCCAGAG TTA       
+hg19_chr1_57432060_57432     28  1.72e-04 ctccttactt gctaagtg gtgagaatta
+hg19_chr7_109599594_1095     86  2.11e-04 TCATTAATCT GCTAGGAG TGCTCCT   
+hg19_chr7_44184353_44184     30  2.54e-04 GGGCACCCCT TCCCAGAG CCTGGGCCCA
+hg19_chr7_4751790_475189     63  2.67e-04 GTCAGACTTC ACCAAGAG CATCTCCCGC
+hg19_chr7_109600541_1096     12  3.18e-04 gcagttacat tctaagaa aaacaatgtc
+hg19_chr7_121006898_1210     74  3.66e-04 GAGTGACTTT TCCAAGTA AAGATCATCA
+hg19_chr7_135433303_1354     60  4.55e-04 CGACCCTCAA GCCCAGTG GAACCCCAGT
+hg19_chr7_37484512_37484     22  4.96e-04 AAAGGAGATA GCTAAGTA TTTCTTGTAG
+hg19_chr1_57286510_57286      1  4.96e-04          . gctaaaag aaaaactccc
+hg19_chr1_152691075_1526     28  6.67e-04 GCTCCTATCA GCAAAGAG GGTAAGTCTC
+hg19_chr1_12787330_12787     59  7.41e-04 ACGTGAAAGT GGCAAGAG ATGTCAAGAC
+hg19_chr7_55177132_55177     12  9.17e-04 CATGGCCCTC TCCAAAAA AAATCAAGGA
+hg19_chr1_181514166_1815     68  9.17e-04 ACATTTCAGC TCCAAAAA AAAAAGTCTT
+hg19_chr1_76189720_76189     31  9.75e-04 CACCCGCATA TCCAAGGA CACCACATCA
+hg19_chr1_181632571_1816     82  1.12e-03 TGTTTTTGTG TTCAAGAA ATGATTGATG
+hg19_chr1_181458789_1814     57  1.31e-03 GAACGACTAG GCTAAGGA ACAGTCCTCT
+hg19_chr7_55179421_55179     65  2.27e-03 AAATACCACA TTTAGGAG GGCTTATGAT
+hg19_chr1_34639574_34639     60  3.03e-03 CGCCTCTGTC ACTAGGTG ATTCTGTCTA
+hg19_chr7_55139797_55139     62  4.00e-03 TTTTATCAAG TTCAAATG CAAACTTAAT
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_135433303_1354     79  9.97e-06 AACCCCAGTA GCTGCAGG TATGCCCGTG
+hg19_chr7_55098846_55098     14  9.97e-06 TTATCTAGGT GCTGCAGG TTTAGAGAGG
+hg19_chr7_55139797_55139     23  2.04e-05 TCGTATGTGA CCTGCAGG GAAGTAAGTT
+hg19_chr1_181514166_1815     28  3.17e-05 agatcattct gatgcagg tggctcatgg
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_127222470_1272      1  2.26e-05          . GCTTGGGT CAGGCTATCA
+hg19_chr1_152691075_1526     88  2.26e-05 CTTTGGGGAA GCTGGGGT GGGAT     
+hg19_chr1_181458789_1814     20  5.09e-05 CCTCTCATCA TCTTGGGT TTTCACACTG
+hg19_chr7_114053938_1140     20  8.30e-05 TTAAGTTGTA GGTGGGGT GCTGTTAAAG
+hg19_chr7_109600683_1096     80  8.30e-05 aaattaaaat ggttgggt tttatgaagc
+hg19_chr7_4751790_475189     31  1.19e-04 TGGTCGCCTC CCTGGGGT GAGACGTTCG
+hg19_chr7_55141921_55142      6  1.59e-04      CAGGA TCTCGGGT TCGACCATGA
+hg19_chr1_34639574_34639     74  1.74e-04 GGTGATTCTG TCTAGGGT AGACATCTTT
+hg19_chr7_109599594_1095     14  1.97e-04 GAGTCAAAAA GCTTGGCT GTGCTGTCTT
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_114053938_1140     66  2.79e-05 TGTTCAGCTG AGACCTGT GAGTTCAAGT
+hg19_chr7_55179421_55179     10  2.79e-05  CCTCTGTAA AGACCTGT CCTTCTATGT
+hg19_chr7_55141921_55142     23  4.35e-05 TTCGACCATG AGTCCTGT CCAGGTCCAG
+hg19_chr7_55098846_55098     59  5.60e-05 TCGATTTTTC AGGCCTGT GATGACGTAT
+hg19_chr7_37484512_37484     38  6.97e-05 TATTTCTTGT AGCCCTCT AGAACGTCGT
+hg19_chr7_109600541_1096     35  1.18e-04 atgtccaggg agcccttt tatctcccgc
+hg19_chr1_181458789_1814     67  1.18e-04 GCTAAGGAAC AGTCCTCT GTAACCATTT
+hg19_chr7_44184353_44184     87  2.10e-04 AATGCATCAA AGTCCTGA GTGAGC    
+hg19_chr1_57432060_57432     76  3.04e-04 tgtttagaac aggcctat gttcagcgct
+hg19_chr7_55119638_55119     81  3.35e-04 cactgagtcc agaacTGT ATAGCAGTTT
+hg19_chr7_55100558_55100     90  4.26e-04 AAGTGTTCAA AGCCCTTA GAA       
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_55100558_55100     28  1.13e-05 TACTACCTTT GCAGGGTA AAGGGGACTC
+hg19_chr1_12787330_12787     42  1.13e-05 GAACCCTCAG GCAGGGTA CGTGAAAGTG
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_55177132_55177     78  9.44e-06 CTTACTGGTT AGGGCAGC TCCTCTTTGC
+hg19_chr7_44184353_44184     19  1.93e-05 CAGGATCCAG AGGGCACC CCTTCCCAGA
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_4751790_475189     76  1.02e-05 AAGAGCATCT CCCGCCTC GGTGCAGTAA
+hg19_chr1_34639574_34639     48  1.02e-05 AATGCTTTGC CCCGCCTC TGTCACTAGG
+hg19_chr7_109600541_1096     48  2.24e-05 ccttttatct cccgcctt actcttgtta
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_121006898_1210     38  1.49e-05 AAGAAGTAAC TGCTGTGA TTAACGGGTT
+hg19_chr1_94929434_94929     31  1.49e-05 actgccatct tgctgtga aatgtgcaca
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_55141921_55142     52  1.12e-05 AGGAAATTCG GAAGGACC ACATGTTCAC
+hg19_chr7_55177132_55177     24  2.29e-05 CAAAAAAAAT CAAGGACC TGCTACAAAG
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value              Site
+-------------             ----- ---------            --------
+hg19_chr7_127222470_1272     46  8.78e-06 TGGGTCCCCA GGACCGCC ACCACCCACA
+hg19_chr1_76189720_76189      5  1.87e-05       CTTT GGACAGCC TCGGATTGCA
+--------------------------------------------------------------------------------

@@ -18,9 +18,34 @@ def nb_seq_fasta(fastafilename):
                 iseq += 1
     return iseq
 
-
-
 def id_motifs_meme(filememe, dir_motif):
+    """
+        Fonction qui recupere les motifs de meme et le nom de la sequence fasta
+        et les stock dans un dictionnaire clé:id seq, val: motif meme
+    """
+    fmotif = dir_motif+"/"+"lignes_motif_meme2.txt"
+    cmd = "sed -n '/P-value/,/--------------------------------------------------------------------------------/p' {}/meme.txt > {}".format(filememe, fmotif)
+    os.system(cmd)
+    dicomeme = {}
+    with open(fmotif, "r") as filein:
+        ltuple = []
+        for ligne in filein:
+            if (ligne[0:3] != "Sequence") or (ligne[0:3] != "---"):         
+                regex = re.compile("(.+[^ ]) +([0-9]+) +(.+) ([ATGC|atgc]+) ([ATGC|atgc]+) ([ATGC|atgc]+)")
+                resultat = regex.search(ligne)
+                if resultat:
+                    seqjoin = resultat.group(4) + resultat.group(5) + resultat.group(6)
+                    l = resultat.group(1) + " " + resultat.group(2) + " " + seqjoin
+                    tu = (resultat.group(2), seqjoin)
+                    if resultat.group(1) not in dicomeme.keys():
+                        dicomeme[resultat.group(1)] = ltuple
+                        if tu not in dicomeme[resultat.group(1)].val():
+                            dicomeme[resultat.group(1)].append(tu)
+        print dicomeme
+    return lfinal
+
+
+def id_motifs_meme1(filememe, dir_motif):
     """
         Fonction qui recupere les motifs de meme et le nom de la sequence fasta
         et les stock dans un dictionnaire clé:id seq, val: motif meme
