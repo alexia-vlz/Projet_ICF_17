@@ -20,16 +20,17 @@ def nb_seq_fasta(fastafilename):
 
 def id_motifs_meme(filememe, dir_motif):
     """
-        Fonction qui recupere les motifs de meme et le nom de la sequence fasta
-        et les stock dans un dictionnaire clé:id seq, val: motif meme
+        Fonction qui recupere les motifs de meme, sa position et le nom de la sequence fasta
+        et les stock dans un dictionnaire clé:id seq, val: positions + seq contenant le motif meme
+        et 10 pb avant et apres le motif. 
     """
     fmotif = dir_motif+"/"+"lignes_motif_meme2.txt"
     cmd = "sed -n '/P-value/,/--------------------------------------------------------------------------------/p' {}/meme.txt > {}".format(filememe, fmotif)
     os.system(cmd)
     dicomeme = {}
     with open(fmotif, "r") as filein:
-        ltuple = []
         for ligne in filein:
+            ltuple = []
             if (ligne[0:3] != "Sequence") or (ligne[0:3] != "---"):         
                 regex = re.compile("(.+[^ ]) +([0-9]+) +(.+) ([ATGC|atgc]+) ([ATGC|atgc]+) ([ATGC|atgc]+)")
                 resultat = regex.search(ligne)
@@ -39,10 +40,12 @@ def id_motifs_meme(filememe, dir_motif):
                     tu = (resultat.group(2), seqjoin)
                     if resultat.group(1) not in dicomeme.keys():
                         dicomeme[resultat.group(1)] = ltuple
-                        if tu not in dicomeme[resultat.group(1)].val():
+                        dicomeme[resultat.group(1)].append(tu)
+                    if resultat.group(1) in dicomeme.keys():
+                        if tu not in dicomeme[resultat.group(1)]:
                             dicomeme[resultat.group(1)].append(tu)
         print dicomeme
-    return lfinal
+    return dicomeme
 
 
 def id_motifs_meme1(filememe, dir_motif):
