@@ -18,7 +18,7 @@ def nb_seq_fasta(fastafilename):
                 iseq += 1
     return iseq
 
-def id_motifs_meme(filememe, dir_motif):
+def parse_motifs_meme(filememe, dir_motif):
     """
         Fonction qui recupere les motifs de meme, sa position et le nom de la sequence fasta
         et les stock dans un dictionnaire clé:id seq, val: positions + seq contenant le motif meme
@@ -48,7 +48,7 @@ def id_motifs_meme(filememe, dir_motif):
     return dicomeme
 
 
-def id_motifs_meme1(filememe, dir_motif):
+def id_motifs_meme(filememe, dir_motif):
     """
         Fonction qui recupere les motifs de meme et le nom de la sequence fasta
         et les stock dans un dictionnaire clé:id seq, val: motif meme
@@ -58,8 +58,6 @@ def id_motifs_meme1(filememe, dir_motif):
     os.system(cmd)
     lmotif_meme = []
     dico_meme = {}
-
-
     with open(fmotif, "r") as fileinmeme:
         for ligne in fileinmeme:
             lmotifdico= []

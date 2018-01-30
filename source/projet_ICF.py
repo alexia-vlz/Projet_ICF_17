@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
     # Motif meme et identifiant de sequence
     print ("Recuperation des motifs de MEME\n")
-    dico_id_motif_meme = step1.id_motifs_meme(repertoire_meme, repertoire_meme)
+    dico_id_motif_meme = step1.parse_motifs_meme(repertoire_meme, repertoire_meme)
     """
     # TOMTOM
     print ("Lancement de TOMTOM\n")
