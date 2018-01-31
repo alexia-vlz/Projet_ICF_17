@@ -1,4 +1,0 @@
-*******************************************************************************
-Test fasta-center1 ...
-fasta-center -len 100 -dna < common/Klf1-200.s 1> results/fasta-center1/fasta-center_lbzr2_stdout 2> log
-PASSED!
