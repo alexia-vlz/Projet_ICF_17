@@ -33,7 +33,8 @@ import sys
 import os
 import re
 sys.path.append('./source/')
-import step1
+import meme
+import tomtom
 
 # Initialisation des parametres
 def initialization_argument():
@@ -74,15 +75,15 @@ if __name__ == '__main__':
     #else:
     #    sys.exit("This repository"+repertoire_meme+" already exists!\n")
 
-    # Selection de motifs si il est present dans 10% des sequences
+    #### Selection de motifs si il est present dans 10% des sequences
     fasta = adress_abs+"/"+args.file_fasta
-    nseq = step1.nb_seq_fasta(fasta)
+    nseq = meme.nb_seq_fasta(fasta)
     #print ("Nombre de seq fasta : {}, \nNombre de sites à trouver est de 10 pourcent donc doit etre present dans minimum {} seq \n".format(nseq, nseq/10))
     nb_site = nseq/10
     #print nb_site
 
-    # MEME
-    cmd_path = "export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH"
+    #### MEME
+    #cmd_path = "export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH"
     #print cmd_path
     #os.system(cmd_path)
 
@@ -93,23 +94,23 @@ if __name__ == '__main__':
 
     # Motif meme et identifiant de sequence
     print ("Recuperation des motifs de MEME\n")
-    dico_id_motif_meme = step1.parse_motifs_meme(repertoire_meme, repertoire_meme)
+    dico_id_motif_meme = meme.parse_motifs_meme(repertoire_meme, repertoire_meme)
     """
-    # TOMTOM
+    #### TOMTOM
     print ("Lancement de TOMTOM\n")
     print ("Dossier meme: {}".format(repertoire_meme))
     print ("Dossier db: {}".format(args.database))
     path_tomtom = "results/output_tomtom"
-    #step1.start_tomtom(repertoire_meme, args.database, path_tomtom)
+    #tomtom.start_tomtom(repertoire_meme, args.database, path_tomtom)
     """
     """
-    # Motifs tomtom
+    #### Motifs tomtom
     print ("Recuperation des motifs de TOMTOM\n")
-    step1.parse_output_tomtom(path_tomtom)
+    tomtom.parse_output_tomtom(path_tomtom)
 
-    # Selection motif connu/pas connu
+    #### Selection motif connu/pas connu
     print ("Differenciation des motifs connus/pas connus\n")
-    step1.comparaison_meme_tomtom(dico_id_motif_meme, path_tomtom)
+    meme.comparaison_meme_tomtom(dico_id_motif_meme, path_tomtom)
     """
 
     fin = time.time()

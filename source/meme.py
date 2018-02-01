@@ -18,6 +18,7 @@ def nb_seq_fasta(fastafilename):
                 iseq += 1
     return iseq
 
+
 def parse_motifs_meme(filememe, dir_motif):
     """
         Fonction qui recupere les motifs de meme, sa position et le nom de la sequence fasta
@@ -37,7 +38,7 @@ def parse_motifs_meme(filememe, dir_motif):
                 if resultat:
                     seqjoin = resultat.group(4) + resultat.group(5) + resultat.group(6)
                     l = resultat.group(1) + " " + resultat.group(2) + " " + seqjoin
-                    tu = (resultat.group(2), seqjoin)
+                    tu = (resultat.group(2), resultat.group(5), seqjoin)
                     if resultat.group(1) not in dicomeme.keys():
                         dicomeme[resultat.group(1)] = ltuple
                         dicomeme[resultat.group(1)].append(tu)
@@ -81,26 +82,7 @@ def id_motifs_meme(filememe, dir_motif):
     return dico_meme
 
 
-def start_tomtom(input_resultmeme, dbfile, outputdir):
-    """
-        Lancement de TOMTOM, chercher dans les motifs meme
-        s'il sont connus c-a-d dans la database choisi.
-        tomtom results/results_testdna/meme.txt bin/motif_databases/HUMAN/HOCOMOCOv9.meme
-    """
-    #cmd1 = "mkdir results/results_tomtom"
-    #os.system(cmd1)
-    cmd_tomtom = "tomtom {}/meme.txt {} -oc {} ".format(input_resultmeme, dbfile, outputdir)
-    #cmd_tomtom = "tomtom {}/meme.txt {} ".format(input_resultmeme, dbfile)
-    os.system(cmd_tomtom)
 
-
-#awk -F'[\t]' '{print $2,$8}' tomtom.txt
-def parse_output_tomtom(output_tomtom):
-    sep = "-F'[\t]'"
-    col = "'{print $2,$8}'"
-    cmd2 = "awk {} {} {}/tomtom.txt >> {}/tomtom_parse.txt".format(sep, col, output_tomtom, output_tomtom)
-    #print cmd2
-    os.system(cmd2)
 
 def comparaison_meme_tomtom(dico_meme, output_tomtom):
     """
@@ -176,30 +158,6 @@ def comparaison_meme_tomtom(dico_meme, output_tomtom):
 
                     #if "nom_motif" not in new_dico[l[1]].keys():
                     #    new_dico[l[1]]["nom_motif"] = liste_nom.append(l[0])
-
-"""
-
-
-
-
-#def store_motifs_meme(filememe):
-    """
-    Recuperation des motifs trouvé par MEME du fichier meme.txt
-    """
-"""
-fileout = open("motif_meme_found.txt","w")
-with open(filememe, "r") as filein:
-    l_motif = []
-    for ligne in filein:
-        regex = re.compile("Multilevel")
-        resultat = regex.search(ligne)
-        if resultat:
-            l = ligne.split()
-            liste = l[1] + '\n'
-            l_motif.append(l[1])
-            fileout.write(liste)
-fileout.close()
-return l_motif
 
 """
 
