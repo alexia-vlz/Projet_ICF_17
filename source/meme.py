@@ -31,20 +31,20 @@ def parse_motifs_meme(filememe, dir_motif):
     dicomeme = {}
     with open(fmotif, "r") as filein:
         for ligne in filein:
-            ltuple = []
+            linfo = []
             if (ligne[0:3] != "Sequence") or (ligne[0:3] != "---"):         
                 regex = re.compile("(.+[^ ]) +([0-9]+) +(.+) ([ATGC|atgc]+) ([ATGC|atgc]+) ([ATGC|atgc]+)")
                 resultat = regex.search(ligne)
                 if resultat:
                     seqjoin = resultat.group(4) + resultat.group(5) + resultat.group(6)
-                    l = resultat.group(1) + " " + resultat.group(2) + " " + seqjoin
-                    tu = (resultat.group(2), resultat.group(5), seqjoin)
+                    #l = resultat.group(1) + " " + resultat.group(2) + " " + seqjoin
+                    info_match = [resultat.group(2), resultat.group(5), seqjoin]
                     if resultat.group(1) not in dicomeme.keys():
-                        dicomeme[resultat.group(1)] = ltuple
-                        dicomeme[resultat.group(1)].append(tu)
+                        dicomeme[resultat.group(1)] = linfo
+                        dicomeme[resultat.group(1)].append(info_match)
                     if resultat.group(1) in dicomeme.keys():
-                        if tu not in dicomeme[resultat.group(1)]:
-                            dicomeme[resultat.group(1)].append(tu)
+                        if info_match not in dicomeme[resultat.group(1)]:
+                            dicomeme[resultat.group(1)].append(info_match)
         print dicomeme
     return dicomeme
 
@@ -83,83 +83,6 @@ def id_motifs_meme(filememe, dir_motif):
 
 
 
-
-def comparaison_meme_tomtom(dico_meme, output_tomtom):
-    """
-        Comparaison des motifs de MEME avec les motifs connu trouvé par TOMTOM.
-        - dico_meme = clé: id seq, val: motif meme resulat brut
-        - fichier info tomtom : nom motif connu humain, motif tomtom
-        Output : fichier connu de motif(doublon a cause des diffrent nom de motif
-        et des diffrenret nom de seq ayant le meme motif)
-    """
-    fileparse = output_tomtom+'/'+'tomtom_parse.txt'
-    filetmp = output_tomtom+'/'+'tomtom_connu.txt'
-    filetmp1 = output_tomtom+'/'+'tomtom_inconnu.txt'
-    fileout = open(filetmp, "w")
-    fileout1 = open(filetmp1, "w")
-    with open(fileparse,"r") as fileintomtom:
-        for ligne in fileintomtom:
-            l = ligne.split()
-            #l[0] nom prot, l[1]: motif
-            for key, val in dico_meme.items():
-                if l[1] ==  dico_meme[key]:
-                    fileout.write(dico_meme[key]+' '+key+' '+l[0]+'\n')
-                elif(l[1] not in dico_meme[key]):
-                    fileout1.write(dico_meme[key]+' '+key+'\n')
-    fileout.close()
-    fileout1.close()
-
-
-
-
-
-#def comparaison_meme_tomtom(dico_meme, output_tomtom):
-    """
-        Comparaison des motifs de MEME avec les motifs connu trouvé par TOMTOM.
-        - dico_meme = clé: id seq, val: motif meme resulat brut
-        - fichier info tomtom : nom motif connu humain, motif tomtom
-        Veut faire un dico, clé1=motif, val= deux clés "id_seq", "nommotif",
-        val de "id_seq" = liste de tout les id ayant le meme motif
-        val de "nom_motif" = liste de tous les nom de motif ayant le mm motif
-    """
-    """
-    fileparse = output_tomtom+'/'+'tomtom_parse.txt'
-    filetmp = output_tomtom+'/'+'tomtom_connu.txt'
-    filetmp1 = output_tomtom+'/'+'tomtom_inconnu.txt'
-    fileout = open(filetmp, "w")
-    fileout1 = open(filetmp, "w")
-    with open(fileparse,"r") as fileintomtom:
-        new_dico = {}
-        liste_id = []
-        liste_nom = []
-        for ligne in fileintomtom:
-            l = ligne.split()
-            for key, val in dico_meme.items():
-                if l[1] not in new_dico.keys():
-                    new_dico[l[1]] = {}
-                if "id_seq" not in new_dico[l[1]].keys():
-                    new_dico[l[1]]["id_seq"] = {}
-                if "nom_motif" not in new_dico[l[1]].keys():
-                    new_dico[l[1]]["nom_motif"] = {}
-
-        for key, val in dico_meme.items():
-            for key2, val2 in new_dico.items():
-                #print "dico key : {}".format(dico_meme[key])
-                print val
-                print "dico key : {}".format(new_dico[val])
-                if val in new_dico.keys():
-                    if key not in liste_id:
-                        liste_id.append(key)
-                new_dico[val]["id_seq"] = liste_id
-            else:
-                    print "pas dans le dico connu"
-                    continue
-            print new_dico
-
-                    #if "nom_motif" not in new_dico[l[1]].keys():
-                    #    new_dico[l[1]]["nom_motif"] = liste_nom.append(l[0])
-
-"""
 
 
 

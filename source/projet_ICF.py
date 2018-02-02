@@ -35,6 +35,7 @@ import re
 sys.path.append('./source/')
 import meme
 import tomtom
+import class_motif
 
 # Initialisation des parametres
 def initialization_argument():
@@ -95,23 +96,24 @@ if __name__ == '__main__':
     # Motif meme et identifiant de sequence
     print ("Recuperation des motifs de MEME\n")
     dico_id_motif_meme = meme.parse_motifs_meme(repertoire_meme, repertoire_meme)
-    """
+    
     #### TOMTOM
     print ("Lancement de TOMTOM\n")
-    print ("Dossier meme: {}".format(repertoire_meme))
+    #print ("Dossier meme: {}".format(repertoire_meme))
     print ("Dossier db: {}".format(args.database))
-    path_tomtom = "results/output_tomtom"
+    path_tomtom = repertoire_meme +"/"+ "output_tomtom"
+    print ("Chemin result tomtom: {}".format(path_tomtom))
     #tomtom.start_tomtom(repertoire_meme, args.database, path_tomtom)
-    """
-    """
+    
     #### Motifs tomtom
     print ("Recuperation des motifs de TOMTOM\n")
-    tomtom.parse_output_tomtom(path_tomtom)
+    #tomtom.parse_output_tomtom(path_tomtom)
+    dico_idprot_motif_tomtom = tomtom.create_dico_tomtom(path_tomtom)
 
-    #### Selection motif connu/pas connu
+    #### Identifiaction motif connu/pas connu dans result de Meme
     print ("Differenciation des motifs connus/pas connus\n")
-    meme.comparaison_meme_tomtom(dico_id_motif_meme, path_tomtom)
-    """
+    dico_known_or_not = class_motif.comparaison_motif(dico_id_motif_meme, dico_idprot_motif_tomtom)
+
 
     fin = time.time()
     print "Temps execution du programme:\n"
