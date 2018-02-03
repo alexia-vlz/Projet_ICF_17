@@ -88,17 +88,17 @@ if __name__ == '__main__':
     #print cmd_path
     #os.system(cmd_path)
 
-    print ("Lancement de MEME\n")
+    print ("\033[34mLancement de MEME\033[0m\n")
     cmd_meme = "meme {} -nmotifs {} -w {} -minsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, nb_site, repertoire_meme)
     #print cmd_meme
     #os.system(cmd_meme)
 
     # Motif meme et identifiant de sequence
-    print ("Recuperation des motifs de MEME\n")
+    print ("\033[34mRecuperation des motifs de MEME\033[0m\n")
     dico_id_motif_meme = meme.parse_motifs_meme(repertoire_meme, repertoire_meme)
     
     #### TOMTOM
-    print ("Lancement de TOMTOM\n")
+    print ("\033[34mLancement de TOMTOM\033[0m\n")
     #print ("Dossier meme: {}".format(repertoire_meme))
     print ("Dossier db: {}".format(args.database))
     path_tomtom = repertoire_meme +"/"+ "output_tomtom"
@@ -106,15 +106,16 @@ if __name__ == '__main__':
     #tomtom.start_tomtom(repertoire_meme, args.database, path_tomtom)
     
     #### Motifs tomtom
-    print ("Recuperation des motifs de TOMTOM\n")
+    print ("\033[34mRecuperation des motifs de TOMTOM\033[0m\n")
     #tomtom.parse_output_tomtom(path_tomtom)
     dico_idprot_motif_tomtom = tomtom.create_dico_tomtom(path_tomtom)
 
     #### Identifiaction motif connu/pas connu dans result de Meme
-    print ("Differenciation des motifs connus/pas connus\n")
+    print ("\033[34mDifferenciation des motifs connus/pas connus\033[0m\n")
     dico_known_or_not = class_motif.comparaison_motif(dico_id_motif_meme, dico_idprot_motif_tomtom)
+    dico_ known_CG = class_motif.look_CG(dico_known_or_not)
 
 
     fin = time.time()
-    print "Temps execution du programme:\n"
+    print "\033[34mTemps execution du programme:\033[0m\n"
     print " {} secondes soit {} minutes ".format(fin-debut, (fin-debut)/60)

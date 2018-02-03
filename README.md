@@ -16,16 +16,19 @@ Objectif:
 Input : fichier fasta de séquence  
 Output: fichiers connus et inconnus
 
-# Mise en place strucuture
+
+# Prérequi
+
+### Mise en place structure
 Creer la structure suivante de dossier:
 /bin /data /source /results  
 
 ``` {}
-cd projet_long
+cd Projet_ICF_17:
 mkdir bin data source results
 ``` 
 
-# Installation de MEME
+### Installation de MEME
 ``` {}
 tar zxf meme_4.12.0.tar.gz 
 cd meme_4.12.0
@@ -35,16 +38,21 @@ make test
 make install
 export PATH=$HOME/meme/bin:$PATH 
 ```
+Plus de détails sur : http://meme-suite.org/doc/install.html?man_type=web
+
+### Telecharger une base de donnée de motifs
+Une base de donnée est fourni par MEME-TOOLS 'motif database' sur: http://meme-suite.org/doc/download.html?man_type=web  
+Placer la base de donnée choisie dans le dossier /bin.
 
 
 # Lancement du programme
-
 ``` {}
 Dans le dossier meme/src:
-$ chmod +x src/
+$ chmod +x src/ 
+```
 
-Si error: meme ou tomtom commande non trouvé retaper cette commande
-$ export PATH=$HOME/meme/bin:$PATH  
+``` {}
+Dans le dossier Projet_ICF_17:
 
 usage: projet_ICF.py [-h] -fa FILE_FASTA -n NB_MOTIF -w LEN_MOTIF -o
                      DIR_RESULT [-ns NB_SITE]

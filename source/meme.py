@@ -45,7 +45,7 @@ def parse_motifs_meme(filememe, dir_motif):
                     if resultat.group(1) in dicomeme.keys():
                         if info_match not in dicomeme[resultat.group(1)]:
                             dicomeme[resultat.group(1)].append(info_match)
-        print dicomeme
+        #print dicomeme
     return dicomeme
 
 

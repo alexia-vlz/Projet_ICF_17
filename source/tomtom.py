@@ -41,6 +41,6 @@ def create_dico_tomtom (path_parse_tomtom):
             if motif_known in dico_tomtom.keys():
                 if nom_id not in dico_tomtom[motif_known]:
                     dico_tomtom[motif_known].append(nom_id)
-        print dico_tomtom
+        print "Nombre de motifs connus: {}\n".format(len(dico_tomtom))
     return dico_tomtom
 
