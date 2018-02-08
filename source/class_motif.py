@@ -55,8 +55,19 @@ def look_CG(dico_meme):
                 #print subliste
             else:
                 subliste.append("0")
-            print subliste
+            #print the nuber of gC motifs
     return dico_meme
+
+
+
+def create_output(dico_info, directory):
+    file_result = directory + "/" + "classification_motifs.txt"
+    with open(file_result, "w") as fileout:
+        fileout.write("Sequence name" "\t" "motif" "\t" "contexte" "\t" "IDgene" "\t" "CG" "\n")
+        for key, val in dico_info.items():
+            for subliste in val:
+                tfs = subliste[2:-1]
+                fileout.write(key)
 
 
 

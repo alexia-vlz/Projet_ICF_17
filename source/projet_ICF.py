@@ -51,9 +51,6 @@ def initialization_argument():
     parser.add_argument('-o', action="store", type=str, default="result_meme",
                        dest='dir_result_meme', required=True, help="Directory \
                        result name ")
-    parser.add_argument('-ns', action="store", type=int, default=False,
-                       dest='nb_site', required=False, help="Number of \
-                       site by motif - default = 10")
     parser.add_argument('-db', action="store", type=str, default=False,
                        dest='database', required=True, help="Path of database motif")    
     args = parser.parse_args()
@@ -76,18 +73,16 @@ if __name__ == '__main__':
     #else:
     #    sys.exit("This repository"+repertoire_meme+" already exists!\n")
 
-    #### Selection de motifs si il est present dans 10% des sequences
+
+    #### Fixation du nombre d occurence minimal fixe a 10%
     fasta = adress_abs+"/"+args.file_fasta
     nseq = meme.nb_seq_fasta(fasta)
     #print ("Nombre de seq fasta : {}, \nNombre de sites à trouver est de 10 pourcent donc doit etre present dans minimum {} seq \n".format(nseq, nseq/10))
     nb_site = nseq/10
     #print nb_site
 
-    #### MEME
-    #cmd_path = "export PATH=$HOME/avelasquez/Projet_ICF_17/bin/meme_4.12.0/meme/bin:$PATH"
-    #print cmd_path
-    #os.system(cmd_path)
 
+    #### MEME
     print ("\033[34mLancement de MEME\033[0m\n")
     cmd_meme = "meme {} -nmotifs {} -w {} -minsites {} -oc {} -dna ".format(args.file_fasta, args.nb_motif, args.len_motif, nb_site, repertoire_meme)
     #print cmd_meme
@@ -97,6 +92,7 @@ if __name__ == '__main__':
     print ("\033[34mRecuperation des motifs de MEME\033[0m\n")
     dico_id_motif_meme = meme.parse_motifs_meme(repertoire_meme, repertoire_meme)
     
+    
     #### TOMTOM
     print ("\033[34mLancement de TOMTOM\033[0m\n")
     #print ("Dossier meme: {}".format(repertoire_meme))
@@ -105,17 +101,22 @@ if __name__ == '__main__':
     print ("Chemin result tomtom: {}".format(path_tomtom))
     #tomtom.start_tomtom(repertoire_meme, args.database, path_tomtom)
     
-    #### Motifs tomtom
+    # Motifs tomtom
     print ("\033[34mRecuperation des motifs de TOMTOM\033[0m\n")
     #tomtom.parse_output_tomtom(path_tomtom)
     dico_idprot_motif_tomtom = tomtom.create_dico_tomtom(path_tomtom)
 
+    
     #### Identifiaction motif connu/pas connu dans result de Meme
     print ("\033[34mDifferenciation des motifs connus/pas connus\033[0m\n")
     dico_known_or_not = class_motif.comparaison_motif(dico_id_motif_meme, dico_idprot_motif_tomtom)
-    dico_ known_CG = class_motif.look_CG(dico_known_or_not)
+    print ("\033[34mDifferenciation des motifs avec CG\033[0m\n")
+    dico_known_CG = class_motif.look_CG(dico_known_or_not)
+    print ("\033[34mEcriture du fichier resultat\033[0m\n")
+    class_motif.create_output(dico_known_CG, repertoire_meme)
+    print ("Resultat creer dans le repertoire : \n {} \n".format(repertoire_meme))
 
 
     fin = time.time()
-    print "\033[34mTemps execution du programme:\033[0m\n"
-    print " {} secondes soit {} minutes ".format(fin-debut, (fin-debut)/60)
+    print "Temps execution du programme:\n"
+    print "{} secondes soit {} minutes ".format(fin-debut, (fin-debut)/60)
