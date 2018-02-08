@@ -61,13 +61,22 @@ def look_CG(dico_meme):
 
 
 def create_output(dico_info, directory):
+    """
+        Creation d un fichier sortie avec le nom de la sequence, la position start
+        du motif, le motif, 10 nt avant/apres le motifs, identifiants des genes
+        connus, prensence de CG avec un 1 sinon 0. a partir dun dictionnaire.
+    """
     file_result = directory + "/" + "classification_motifs.txt"
     with open(file_result, "w") as fileout:
-        fileout.write("Sequence name" "\t" "motif" "\t" "contexte" "\t" "IDgene" "\t" "CG" "\n")
+        fileout.write("Sequence_name" "\t" "start" "\t" "motif" "\t" "around_motif" "\t" "IDgene" "\t" "CG" "\n")
         for key, val in dico_info.items():
             for subliste in val:
                 tfs = subliste[2:-1]
-                fileout.write(key)
+                ligne = key + "\t" + subliste[0] + "\t" + subliste[1] + "\t"
+                fileout.write(ligne)
+                for tf in tfs:
+                    fileout.write(tf + " ")
+                fileout.write("\t" + subliste[-1] + "\n")
 
 
 

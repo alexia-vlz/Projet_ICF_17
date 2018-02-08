@@ -22,7 +22,7 @@ def nb_seq_fasta(fastafilename):
 def parse_motifs_meme(filememe, dir_motif):
     """
         Fonction qui recupere les motifs de meme, sa position et le nom de la sequence fasta
-        et les stock dans un dictionnaire clé:id seq, val: positions + seq contenant le motif meme
+        et les stock dans un dictionnaire clé:id seq, val: positions + motif + seq contenant le motif meme
         et 10 pb avant et apres le motif. 
     """
     fmotif = dir_motif+"/"+"lignes_motif_meme2.txt"
@@ -47,42 +47,6 @@ def parse_motifs_meme(filememe, dir_motif):
                             dicomeme[resultat.group(1)].append(info_match)
         #print dicomeme
     return dicomeme
-
-
-def id_motifs_meme(filememe, dir_motif):
-    """
-        Fonction qui recupere les motifs de meme et le nom de la sequence fasta
-        et les stock dans un dictionnaire clé:id seq, val: motif meme
-    """
-    fmotif = dir_motif+"/"+"lignes_motif_meme.txt"
-    cmd = "grep -A2 '^BL' {}/meme.txt > {}".format(filememe, fmotif)
-    os.system(cmd)
-    lmotif_meme = []
-    dico_meme = {}
-    with open(fmotif, "r") as fileinmeme:
-        for ligne in fileinmeme:
-            lmotifdico= []
-            if (ligne[0:3] != "BL") or (ligne[0:3] != "--"):
-                regex = re.compile("(.+) \(.+\) ([ATGC]+)")
-                resultat = regex.search(ligne)
-                if resultat:
-                    #group 1 = id seq et group 2 = motif mem
-                    if resultat.group(2) not in lmotif_meme:
-                        lmotif_meme.append(resultat.group(2))
-                        if resultat.group(1) not in dico_meme.keys():
-                            #dico_meme[resultat.group(1)] = resultat.group(2)
-                            dico_meme[resultat.group(1)] =  lmotifdico
-                        if resultat.group(1) in dico_meme.keys():
-                            if resultat.group(2) not in lmotifdico:
-                                dico_meme[resultat.group(1)].append(resultat.group(2))
-
-        print dico_meme
-        print "length l : {}".format(len(lmotif_meme))
-        print "length dico: {}".format(len(dico_meme))
-    return dico_meme
-
-
-
 
 
 
