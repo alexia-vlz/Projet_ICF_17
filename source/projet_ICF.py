@@ -35,7 +35,7 @@ def initialization_argument():
 
 
 if __name__ == '__main__':
-    # ./source/projet_ICF.py -fa data/genes_zbtb.fasta -n 10 -w 8 -db bin/motif_databases/HUMAN/HOCOMOCOv9.meme -o results_testdna900
+    # ./source/projet_ICF.py -fa data/genes_zbtb.fasta -n 10 -w 8 -db bin/motif_databases/HUMAN/HOCOMOCOv9.meme -o results_testdnaNEWcourt
     debut = time.time()
     args = initialization_argument()
     adress_abs = os.getcwd()
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     cmd_meme = "meme {} -nmotifs {} -w {} -minsites {} -oc {} \
                 -dna ".format(args.file_fasta, args.nb_motif,
                               args.len_motif, nb_site, repertoire_meme)
-    # os.system(cmd_meme)
+    os.system(cmd_meme)
 
     # Motif meme et identifiant de sequence
     print "\033[34mRecuperation des motifs de MEME\033[0m\n"
@@ -68,11 +68,11 @@ if __name__ == '__main__':
     print "\033[34mLancement de TOMTOM\033[0m\n"
     path_tomtom = repertoire_meme + "/" + "output_tomtom"
     print "Chemin result tomtom: {}".format(path_tomtom)
-    # tomtom.start_tomtom(repertoire_meme, args.database, path_tomtom)
+    tomtom.start_tomtom(repertoire_meme, args.database, path_tomtom)
     
     # Motifs tomtom
     print "\033[34mRecuperation des motifs de TOMTOM\033[0m\n"
-    # tomtom.parse_output_tomtom(path_tomtom)
+    tomtom.parse_output_tomtom(path_tomtom)
     dico_idprot_motif_tomtom = tomtom.create_dico_tomtom(path_tomtom)
 
     # Identifiaction motif connu/pas connu dans result de Meme
@@ -82,9 +82,10 @@ if __name__ == '__main__':
     print"\033[34mDifferenciation des motifs avec CG\033[0m\n"
     dico_known_CG = class_motif.look_CG(dico_known_or_not)
     print "\033[34mEcriture du fichier resultat\033[0m\n"
-    class_motif.create_output(dico_known_CG, repertoire_meme)
+    file_result = class_motif.create_output(dico_known_CG, repertoire_meme)
     print "Resultat creer dans le repertoire : \
            \n {} \n".format(repertoire_meme)
+    class_motif.stat(file_result)
 
     fin = time.time()
     print "Temps execution du programme:\n"

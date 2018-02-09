@@ -16,6 +16,7 @@ def nb_seq_fasta(fastafilename):
             resultat1 = regex.search(ligne1)
             if resultat1:
                 iseq += 1
+        print "Nombre de sequence: {}\n".format(iseq)
     return iseq
 
 
@@ -46,5 +47,4 @@ def parse_motifs_meme(filememe, dir_motif):
                     if resultat.group(1) in dicomeme.keys():
                         if info_match not in dicomeme[resultat.group(1)]:
                             dicomeme[resultat.group(1)].append(info_match)
-        # print dicomeme
     return dicomeme

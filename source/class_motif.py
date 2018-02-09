@@ -55,7 +55,7 @@ def look_CG(dico_meme):
                 # print subliste
             else:
                 subliste.append("0")
-            # print the nuber of gC motifs
+    print "Nombre de motifs avec un CG : {}\n".format(compt_cg)
     return dico_meme
 
 
@@ -78,6 +78,14 @@ def create_output(dico_info, directory):
                 for tf in tfs:
                     fileout.write(tf + " ")
                 fileout.write("\t" + subliste[-1] + "\n")
+    return file_result
+
+
+def stat(filename):
+    print "Nombre total de motif inconnu: "
+    cmd = " grep 'inconnu' {} | wc -l".format(filename)
+    os.system(cmd)
+
 
 
 def comparaison_meme_tomtom(dico_meme, output_tomtom):

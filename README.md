@@ -13,8 +13,10 @@ Objectif:
 
 # Input & Output
 
-Input : fichier fasta de séquence  
-Output: fichiers connus et inconnus
+Input : fichier de séquences fasta  
+Output: fichier indiquant pour chaque séquence, la position de début du motif,
+	le motif, le contexte du motif (+/- 10nt), liste des identifiants de gènes
+	(sinon mention "inconnu"), la presence de CG = 1 (sinon 0)
 
 
 # Prérequi
@@ -65,5 +67,5 @@ optional arguments:
   -n NB_MOTIF     Number of motifs to find
   -w LEN_MOTIF    Width of the motif - default = 6
   -o DIR_RESULT   Directory result name
-  -ns NB_SITE     Number of site by motif - default = 2
+
 ```
