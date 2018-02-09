@@ -21,9 +21,10 @@ def nb_seq_fasta(fastafilename):
 
 def parse_motifs_meme(filememe, dir_motif):
     """
-        Fonction qui recupere les motifs de meme, sa position et le nom de la sequence fasta
-        et les stock dans un dictionnaire clé:id seq, val: positions + motif + seq contenant le motif meme
-        et 10 pb avant et apres le motif. 
+        Fonction qui recupere les motifs de meme, sa position et le nom
+        de la sequence fasta et les stock dans un dictionnaire
+        clé:id seq, val: positions + motif + seq contenant le motif meme
+        et 10 pb avant et apres le motif.
     """
     fmotif = dir_motif+"/"+"lignes_motif_meme2.txt"
     cmd = "sed -n '/P-value/,/--------------------------------------------------------------------------------/p' {}/meme.txt > {}".format(filememe, fmotif)
@@ -32,12 +33,12 @@ def parse_motifs_meme(filememe, dir_motif):
     with open(fmotif, "r") as filein:
         for ligne in filein:
             linfo = []
-            if (ligne[0:3] != "Sequence") or (ligne[0:3] != "---"):         
+            if (ligne[0:3] != "Sequence") or (ligne[0:3] != "---"):
                 regex = re.compile("(.+[^ ]) +([0-9]+) +(.+) ([ATGC|atgc]+) ([ATGC|atgc]+) ([ATGC|atgc]+)")
                 resultat = regex.search(ligne)
                 if resultat:
-                    seqjoin = resultat.group(4) + resultat.group(5) + resultat.group(6)
-                    #l = resultat.group(1) + " " + resultat.group(2) + " " + seqjoin
+                    seqjoin = resultat.group(4) + resultat.group(5) + \
+                              resultat.group(6)
                     info_match = [resultat.group(2), resultat.group(5), seqjoin]
                     if resultat.group(1) not in dicomeme.keys():
                         dicomeme[resultat.group(1)] = linfo
@@ -45,10 +46,5 @@ def parse_motifs_meme(filememe, dir_motif):
                     if resultat.group(1) in dicomeme.keys():
                         if info_match not in dicomeme[resultat.group(1)]:
                             dicomeme[resultat.group(1)].append(info_match)
-        #print dicomeme
+        # print dicomeme
     return dicomeme
-
-
-
-if __name__ == '__main__':
-    list_motif = store_motifs_meme("/home/avelasquez/Projet_ICF_17/results/results_test/meme.txt")
